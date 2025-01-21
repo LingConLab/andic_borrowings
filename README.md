@@ -1,2 +1,2 @@
 # andic_borrowings
-The repository for analyzing of Russian borrowings to Andic languages
+The repository for analysis of Russian borrowings to Andic languages
