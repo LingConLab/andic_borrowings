@@ -9,9 +9,15 @@ def RemoveDash(string):
     return "".join(string.split("-")).lower()
 
 def DeletePalatal(string):
-    string = re.sub(r'[\']', '', string)
+    string = re.sub(r'k\'', '1', string)
+    string = re.sub(r'g\'', '1', string)
+    string = re.sub(r't\'', '1', string)
+    string = re.sub(r'p\'', '1', string)
+    string = re.sub(r'x\'', '1', string)
+    string = re.sub(r'\'', '', string)
     string = re.sub(r'ts', '7', string)
-    string = re.sub(r'[\u02B2\u02B7]', '', string)
+    string = re.sub(r'd\u0292', '8', string)
+    string = re.sub(r'[\u02B2\u02B7:\u02D0]', '', string)
     return string
 
 
