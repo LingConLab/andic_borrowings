@@ -3,7 +3,6 @@ library(tidyverse)
 
 df <- read_csv("avar_andic_rus_ranks.csv")
 
-
 # ca analysis -------------------------------------------------------------
 
 df |> 
@@ -20,6 +19,7 @@ df |>
   mutate(corresp = str_c(russian_ipa, ":", target_ipa)) |> 
   select(-russian_ipa, -target_ipa) |> 
   distinct() |> 
+  na.omit() |> 
   pivot_wider(names_from = corresp, values_from = n, values_fill = 0) |> 
   column_to_rownames("language_ref") |> 
   ca::ca() ->
