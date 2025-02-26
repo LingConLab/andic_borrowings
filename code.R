@@ -32,3 +32,38 @@ ca$rowcoord |>
   geom_point()+
   ggrepel::geom_label_repel()+
   theme_minimal()
+
+
+df |> 
+  filter(is.na(derived)) |> 
+  select(language, reference, russian_ipa, target_ipa, meaning_ru) |>
+  distinct() |> 
+  group_by(language, reference,  meaning_ru) |> 
+  mutate(meaing_id = 1:n()) |> 
+  slice_sample(n = 1) |> 
+  mutate(language_ref = str_c(language, ": ", reference),
+         russian_ipa = str_to_lower(russian_ipa),
+         russian_ipa = str_remove_all(russian_ipa, "'"),
+         target_ipa = str_remove_all(target_ipa, "'"),
+         russian_ipa = str_split(russian_ipa, "-"),
+         target_ipa = str_split(target_ipa, "-")) |> 
+  unnest(c(russian_ipa, target_ipa)) |> 
+  add_count(language_ref, reference, meaning_ru) |> 
+  rename(total = n) |> 
+  filter(russian_ipa != target_ipa) |> 
+  add_count(language_ref, meaning_ru) |> 
+  rename(changes = n) ->
+  for_modeling
+
+library(lme4)
+for_modeling |> 
+  mutate(ratio = changes/total) |> 
+  group_by(language_ref) |> 
+  mutate(median_value = median(ratio)) |> 
+  ungroup() |> 
+  mutate(language_ref = fct_reorder(language_ref, -median_value)) |> 
+  ggplot(aes(ratio, language_ref, fill = language_ref))+
+  ggridges::geom_density_ridges(alpha = 0.5, show.legend = FALSE)+
+  theme_minimal()+
+  labs(y = NULL)
+  
