@@ -67,8 +67,6 @@ for_modeling |>
   ggridges::geom_density_ridges(alpha = 0.5, show.legend = FALSE)+
   theme_minimal()+
   labs(y = NULL)
-  
-
 
 # extract word frequency from Google ngrams -------------------------------
 
