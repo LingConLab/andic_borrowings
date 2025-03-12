@@ -16,6 +16,7 @@ df |>
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
   count(language_ref, russian_ipa, target_ipa) |> 
+  View()
   mutate(corresp = str_c(russian_ipa, ":", target_ipa)) |> 
   select(-russian_ipa, -target_ipa) |> 
   distinct() |> 
@@ -67,3 +68,30 @@ for_modeling |>
   theme_minimal()+
   labs(y = NULL)
   
+
+
+# extract word frequency from Google ngrams -------------------------------
+
+df |> 
+  distinct(meaning_ru) |> 
+  arrange(meaning_ru) |> 
+  filter(meaning_ru != "алжир/ец, -ка") |>
+# в пакете ограничение на 12 запросов, так что делим на группы по 12 лемм
+  mutate(group = rep(1:ceiling(n()/12), each = 12)[1:n()]) ->
+  words_samples
+
+library(ngramr)
+
+words_samples |> 
+  distinct(group) |> 
+  pull(group) |> 
+  walk(.progress = TRUE, 
+      function(i){
+        words_samples |> 
+          filter(group == i) |> 
+          pull(meaning_ru) |> 
+          ngram(corpus = "ru-2019", smoothing = 30, year_start = 1800) |> 
+          mutate(group = i) |> 
+          write_csv("google_ngram_frequency.csv", na = "", append = TRUE)
+        Sys.sleep(5)
+  })
