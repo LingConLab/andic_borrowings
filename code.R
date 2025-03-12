@@ -16,7 +16,6 @@ df |>
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
   count(language_ref, russian_ipa, target_ipa) |> 
-  View()
   mutate(corresp = str_c(russian_ipa, ":", target_ipa)) |> 
   select(-russian_ipa, -target_ipa) |> 
   distinct() |> 
@@ -115,3 +114,35 @@ research_with_yo2ye |>
            write_csv("google_ngram_frequency.csv", na = "", append = TRUE)
          Sys.sleep(5)
        })
+
+ngrams <- read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group"))
+
+ngrams |> 
+  filter(meaning_ru %in% c("елка", "щетка", "пролетарий", "телефон", "вафля", "колхоз")) |> 
+  distinct(year, meaning_ru, frequency, corpus) |> 
+  group_by(meaning_ru) |> 
+  mutate(sum = cumsum(frequency)) |> 
+  ggplot(aes(year, sum))+
+  geom_line()+
+  facet_wrap(~meaning_ru, scales = "free")
+
+ngrams |> 
+#  filter(meaning_ru %in% sample(unique(ngrams$meaning_ru), 6)) |> 
+  distinct(year, meaning_ru, frequency, corpus) |> 
+  group_by(meaning_ru) |> 
+  mutate(sum = cumsum(frequency),
+         differ = c(NA, diff(sum)),
+         differ2 = c(NA, diff(differ)),
+         sd_differ2 = sd(differ2, na.rm = TRUE)) |> 
+  na.omit() |> 
+  ggplot(aes(sd_differ2))+
+  geom_histogram()+
+  scale_y_log10()
+
+dfor_modeling |> 
+  left_join(result |> distinct(meaning_ru, year_break)) |> 
+  mutate(ratio = changes/total) |> 
+  ggplot(aes(year_break, ratio))+
+  #geom_point(size = 0.1)+
+  geom_hex()+
+  scale_fill_gradient(low = "navy", high = "tomato")
