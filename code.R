@@ -97,4 +97,21 @@ words_samples |>
 ngrams <- read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group"))
 
 words_samples[!(words_samples$meaning_ru %in% unique(ngrams$meaning_ru)),] |> 
-  View()
+  filter(str_detect(meaning_ru, "ё")) |> 
+  mutate(group = rep(1:ceiling(n()/12), each = 12)[1:n()],
+         meaning_ru = str_replace(meaning_ru, "ё", "е")) ->
+  research_with_yo2ye
+
+research_with_yo2ye |> 
+  distinct(group) |> 
+  pull(group) |> 
+  walk(.progress = TRUE, 
+       function(i){
+         research_with_yo2ye |> 
+           filter(group == i) |> 
+           pull(meaning_ru) |> 
+           ngram(corpus = "ru-2019", smoothing = 30, year_start = 1800) |> 
+           mutate(group = i) |> 
+           write_csv("google_ngram_frequency.csv", na = "", append = TRUE)
+         Sys.sleep(5)
+       })
