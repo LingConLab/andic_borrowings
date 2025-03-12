@@ -93,3 +93,8 @@ words_samples |>
           write_csv("google_ngram_frequency.csv", na = "", append = TRUE)
         Sys.sleep(5)
   })
+
+ngrams <- read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group"))
+
+words_samples[!(words_samples$meaning_ru %in% unique(ngrams$meaning_ru)),] |> 
+  View()
