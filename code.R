@@ -57,9 +57,9 @@ df |>
 for_modeling |> 
   mutate(ratio = changes/total) |> 
   group_by(language_ref) |> 
-  mutate(median_value = mean(ratio)) |> 
+  mutate(mean_value = mean(ratio)) |> 
   ungroup() |> 
-  mutate(language_ref = fct_reorder(language_ref, -median_value)) |> 
+  mutate(language_ref = fct_reorder(language_ref, -mean_value)) |> 
   ggplot(aes(ratio, language_ref, fill = language_ref))+
   ggridges::geom_density_ridges(alpha = 0.5, show.legend = FALSE)+
   theme_minimal()+
@@ -276,7 +276,6 @@ df |>
   na.omit() ->
   for_modeling
 
-
 df |> 
   filter(is.na(derived)) |> 
   select(language, reference, meaning_ru, match_count, total_segments) |>
@@ -311,7 +310,12 @@ new_data |>
   mutate(language = fct_reorder(language, predictions)) |> 
   ggplot(aes(year, predictions, color = language)) +
   geom_line(show.legend = FALSE) +
-  geom_text(aes(label = language), data = new_data |> filter(year == 2000), show.legend = FALSE, hjust = 0) + 
+  geom_text(aes(label = language), data = new_data |> 
+              filter(year == 2000) |> 
+              mutate(predictions = ifelse(language == "Tindi: Magomedova 2003", 
+                                          0.293,
+                                          predictions)), 
+            show.legend = FALSE, hjust = 0) + 
   xlim(1800, 2065)+
   theme_minimal()
 
