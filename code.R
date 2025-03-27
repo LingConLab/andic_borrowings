@@ -33,7 +33,6 @@ ca$rowcoord |>
   ggrepel::geom_label_repel()+
   theme_minimal()
 
-
 df |> 
   filter(is.na(derived)) |> 
   select(language, reference, russian_ipa, target_ipa, meaning_ru) |>
@@ -55,11 +54,10 @@ df |>
   rename(changes = n) ->
   for_modeling
 
-library(lme4)
 for_modeling |> 
   mutate(ratio = changes/total) |> 
   group_by(language_ref) |> 
-  mutate(median_value = median(ratio)) |> 
+  mutate(median_value = mean(ratio)) |> 
   ungroup() |> 
   mutate(language_ref = fct_reorder(language_ref, -median_value)) |> 
   ggplot(aes(ratio, language_ref, fill = language_ref))+
@@ -139,7 +137,7 @@ ngrams |>
   geom_histogram()+
   scale_y_log10()
 
-dfor_modeling |> 
+for_modeling |> 
   left_join(result |> distinct(meaning_ru, year_break)) |> 
   mutate(ratio = changes/total) |> 
   ggplot(aes(year_break, ratio))+
@@ -189,8 +187,6 @@ ngrams |>
   mutate(sum = cumsum(frequency)+0.000000000000001) ->
   for_plot
 
-meaning <- "рентген"
-
 for_plot |> 
   ggplot(aes(year, sum, group = meaning_ru))+
   geom_line(alpha = 0.1, linewidth = 0.1)+
@@ -198,3 +194,155 @@ for_plot |>
   theme_minimal()+
   scale_y_log10()+
   labs(title = meaning)
+
+for_plot |> 
+  group_by(meaning_ru) |> 
+  filter(sum >= 1e-08) |> 
+  slice(1) ->
+  cross_range
+  
+ngrams |> 
+  distinct(meaning_ru) |> 
+  pull(meaning_ru) |> 
+  walk(.progress = TRUE,
+       function(meaning){
+         cross_range |> 
+           filter(meaning_ru == meaning) |> 
+           pull(year) ->
+           year_of_crossing
+         
+         for_plot |> 
+           ggplot(aes(year, sum, group = meaning_ru))+
+           geom_line(alpha = 0.1, linewidth = 0.1)+
+           geom_line(data = for_plot |> filter(meaning_ru == meaning), color = "red")+
+           geom_hline(yintercept = 1e-08, linetype = 2)+
+           theme_minimal()+
+           scale_y_log10()+
+           labs(title = meaning,
+                subtitle =  year_of_crossing) ->
+           plot2save
+         
+         str_c(year_of_crossing, "_", meaning, ".png") |>     
+           ggsave(filename = _, 
+                  plot = plot2save, 
+                  path = "google_n_gram_pics",
+                  width = 9, 
+                  height = 7,
+                  bg = "white")
+       })
+
+
+# betareg
+
+# regression --------------------------------------------------------------
+
+ngrams <- read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group"))
+
+ngrams |> 
+  distinct(year, meaning_ru, frequency, corpus) |> 
+  group_by(meaning_ru) |> 
+  mutate(sum = cumsum(frequency)) |> 
+  filter(sum >= 1e-08) |> 
+  group_by(meaning_ru) |> 
+  slice(1) |> 
+  select(year, meaning_ru) ->
+  cross_range
+
+df |> 
+  filter(is.na(derived)) |> 
+  select(language, reference, russian_ipa, target_ipa, meaning_ru) |>
+  distinct() |> 
+  group_by(language, reference,  meaning_ru) |> 
+  mutate(meaing_id = 1:n()) |> 
+  slice_sample(n = 1) |> 
+  mutate(language_ref = str_c(language, ": ", reference),
+         russian_ipa = str_to_lower(russian_ipa),
+         russian_ipa = str_remove_all(russian_ipa, "'"),
+         target_ipa = str_remove_all(target_ipa, "'"),
+         russian_ipa = str_split(russian_ipa, "-"),
+         target_ipa = str_split(target_ipa, "-")) |> 
+  unnest(c(russian_ipa, target_ipa)) |> 
+  add_count(language_ref, reference, meaning_ru) |> 
+  rename(total = n) |> 
+  filter(russian_ipa != target_ipa) |> 
+  add_count(language_ref, meaning_ru) |> 
+  rename(changes = n) |> 
+  left_join(cross_range) |> 
+  distinct(language, reference, meaning_ru, total, changes, year) |> 
+  mutate(ratio = changes/total,
+         language = str_c(language, ": ", reference),
+         language = factor(language),
+         language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
+  na.omit() ->
+  for_modeling
+
+
+df |> 
+  filter(is.na(derived)) |> 
+  select(language, reference, meaning_ru, match_count, total_segments) |>
+  mutate(changes = total_segments - match_count) |> 
+  rename(total = total_segments) |> 
+  group_by(language, reference,  meaning_ru) |> 
+  mutate(meaing_id = 1:n()) |> 
+  slice_sample(n = 1) |> 
+  left_join(cross_range) |> 
+  distinct(language, reference, meaning_ru, total, changes, year) |> 
+  mutate(ratio = changes/total,
+         language = str_c(language, ": ", reference),
+         language = factor(language),
+         language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
+  filter(changes > 0) |> 
+  na.omit() ->
+  for_modeling
+
+for_modeling |> 
+  betareg::betareg(I(changes/total) ~ year:language,
+          data = _) ->
+  fit
+
+summary(fit)
+
+new_data <- tibble(language = rep(levels(for_modeling$language), each = 201),
+                   year = rep(1800:2000, 10))
+
+new_data$predictions <- predict(fit, new_data)
+
+new_data |> 
+  mutate(language = fct_reorder(language, predictions)) |> 
+  ggplot(aes(year, predictions, color = language)) +
+  geom_line(show.legend = FALSE) +
+  geom_text(aes(label = language), data = new_data |> filter(year == 2000), show.legend = FALSE, hjust = 0) + 
+  xlim(1800, 2065)+
+  theme_minimal()
+
+
+summary(fit)
+
+library(ggeffects)
+
+fit |> 
+  ggpredict(terms = c("year [all]", "language"),
+            vcov = stats::vcov(fit))+
+  plot()
+
+# 
+read_tsv("/home/agricolamz/work/databases/TALD/data/tald_villages.csv") |>
+  filter(aff == "Avar-Andic",
+         lat > 41.9,
+         lat < 43.3,
+         lon < 46.7) ->
+  filtered_langs
+
+library(lingtypology)
+map.feature(filtered_langs$lang,
+            features = filtered_langs$lang,
+            latitude = filtered_langs$lat,
+            longitude = filtered_langs$lon,
+            minimap = TRUE, 
+            minimap.position = "bottomleft",
+            legend.position = "topleft",
+            tile = "Esri.WorldGrayCanvas")
+
+  ggplot(aes(lon, lat, color = lang))+
+  geom_point()
+  ggrepel::geom_text_repel()
