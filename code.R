@@ -301,35 +301,36 @@ for_modeling |>
 
 summary(fit)
 
-new_data <- tibble(language = rep(levels(for_modeling$language), each = 201),
-                   year = rep(1800:2000, 10))
-
-new_data$predictions <- predict(fit, new_data)
-
-new_data |> 
-  mutate(language = fct_reorder(language, predictions)) |> 
-  ggplot(aes(year, predictions, color = language)) +
-  geom_line(show.legend = FALSE) +
-  geom_text(aes(label = language), data = new_data |> 
-              filter(year == 2000) |> 
-              mutate(predictions = ifelse(language == "Tindi: Magomedova 2003", 
-                                          0.293,
-                                          predictions)), 
-            show.legend = FALSE, hjust = 0) + 
-  xlim(1800, 2065)+
-  theme_minimal()
-
-
-summary(fit)
-
 library(ggeffects)
 
 fit |> 
-  ggpredict(terms = c("year [all]", "language"),
-            vcov = stats::vcov(fit))+
-  plot()
+  ggpredict(terms = c("year [all]", "language")) |> 
+  as_tibble() |> 
+  ggplot(aes(x, predicted, color = group))+
+  geom_line()+
+  geom_text(aes(label = group), 
+            data = tibble(x = 1925, 
+                          group = levels(for_modeling$language),
+                          predicted = predict(fit,
+                                              tibble(language = levels(for_modeling$language),
+                                                     year = 1925))),
+            show.legend = FALSE, hjust = 0) +
+  theme_minimal()+
+  theme(legend.position = "none")+
+  scale_color_manual(values = c("#F78716",
+                                "#93898C",
+                                "#3B8BC6",
+                                "#35A532",
+                                "#E62651",
+                                "#E62651",
+                                "#8D63B9",
+                                "#8E5D4D",
+                                "#EB88CD",
+                                "#F3DD0D")) +
+  xlim(1800, 1960)+
+  labs(x = "year of start of active use of word in Russian",
+       y = "estimated ratio\nof changes in borrowing")
 
-# 
 read_tsv("/home/agricolamz/work/databases/TALD/data/tald_villages.csv") |>
   filter(aff == "Avar-Andic",
          lat > 41.9,
