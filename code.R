@@ -146,3 +146,55 @@ dfor_modeling |>
   #geom_point(size = 0.1)+
   geom_hex()+
   scale_fill_gradient(low = "navy", high = "tomato")
+
+
+ngrams |> 
+  distinct(meaning_ru) |> 
+  pull(meaning_ru) |> 
+  walk(.progress = TRUE,
+       function(meaning){
+    ngrams |> 
+      filter(meaning_ru == meaning) |> 
+      distinct(year, meaning_ru, frequency, corpus) |> 
+      group_by(meaning_ru) |> 
+      mutate(sum = cumsum(frequency),
+             differ = c(NA, diff(sum)),
+             differ2 = c(NA, diff(differ)),
+             sd_differ2 = sd(differ2, na.rm = TRUE)) |> 
+      na.omit() |> 
+      select(-corpus, -differ) |> 
+      pivot_longer(names_to = "type", values_to = "value", frequency:differ2) |> 
+      mutate(type = factor(type, levels = c("frequency", "sum", "differ2"))) ->
+      for_plot
+    
+    for_plot |> 
+      ggplot(aes(year, value))+
+      geom_line()+
+      facet_wrap(~type, scales = "free")+
+      labs(title = meaning, subtitle = unique(for_plot$sd_differ2)) ->
+      plot2save
+
+    str_c(unique(for_plot$sd_differ2)*1000000 |> round(), "_", meaning, ".png") |>     
+      ggsave(filename = _, 
+             plot = plot2save, 
+             path = "google_n_gram_pics",
+             width = 9, 
+             height = 7,
+             bg = "white")
+  })
+
+ngrams |> 
+  distinct(year, meaning_ru, frequency, corpus) |> 
+  group_by(meaning_ru) |> 
+  mutate(sum = cumsum(frequency)+0.000000000000001) ->
+  for_plot
+
+meaning <- "рентген"
+
+for_plot |> 
+  ggplot(aes(year, sum, group = meaning_ru))+
+  geom_line(alpha = 0.1, linewidth = 0.1)+
+  geom_line(data = for_plot |> filter(meaning_ru == meaning), color = "red")+
+  theme_minimal()+
+  scale_y_log10()+
+  labs(title = meaning)
