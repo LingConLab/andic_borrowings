@@ -185,20 +185,30 @@ ngrams |>
 ngrams |> 
   distinct(year, meaning_ru, frequency, corpus) |> 
   group_by(meaning_ru) |> 
+  mutate(sum = cumsum(frequency)) |> 
+  ggplot(aes(year, sum, group = meaning_ru))+
+  geom_line(alpha = 0.1, linewidth = 0.1)+
+  theme_minimal()+
+  scale_y_log10()
+
+
+ngrams |> 
+  distinct(year, meaning_ru, frequency, corpus) |> 
+  group_by(meaning_ru) |> 
   mutate(sum = cumsum(frequency)+0.000000000000001) ->
   for_plot
 
 for_plot |> 
   ggplot(aes(year, sum, group = meaning_ru))+
   geom_line(alpha = 0.1, linewidth = 0.1)+
-  geom_line(data = for_plot |> filter(meaning_ru == meaning), color = "red")+
+  geom_line(data = for_plot |> filter(meaning_ru == "колхоз"), color = "red")+
   theme_minimal()+
   scale_y_log10()+
-  labs(title = meaning)
+  labs(title = "колхоз")
 
 for_plot |> 
   group_by(meaning_ru) |> 
-  filter(sum >= 1e-08) |> 
+  filter(sum >= 1e-06) |> 
   slice(1) ->
   cross_range
   
@@ -243,11 +253,17 @@ ngrams |>
   distinct(year, meaning_ru, frequency, corpus) |> 
   group_by(meaning_ru) |> 
   mutate(sum = cumsum(frequency)) |> 
-  filter(sum >= 1e-08) |> 
+  filter(sum >= 1e-06) |> 
   group_by(meaning_ru) |> 
   slice(1) |> 
   select(year, meaning_ru) ->
   cross_range
+
+# df |> 
+#   mutate(r_m = str_count(russian_ipa, "-"),
+#          t_m = str_count(target_ipa, "-")) |> 
+#   filter(r_m != t_m) |> 
+#   View()
 
 df |> 
   filter(is.na(derived)) |> 
@@ -260,7 +276,6 @@ df |>
          russian_ipa = str_c(russian_ipa, "-#"),
          target_ipa = str_c(target_ipa, "-#"),
          russian_ipa = str_remove_all(russian_ipa, "'"),
-         target_ipa = str_remove_all(target_ipa, "'"),
          russian_ipa = str_split(russian_ipa, "-"),
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
@@ -273,26 +288,35 @@ df |>
          russian_ipa = if_else(str_detect(russian_ipa, "[kg]ʲ"), russian_ipa, str_remove(russian_ipa, "ʲ")),
          # expected correspondences
          russian_ipa = str_remove(russian_ipa, "ˌ"),
-         target_ipa = str_remove(target_ipa, "ː(?=[aeou])"),
-         russian_ipa = if_else(str_detect(russian_ipa, "ʐ") & str_detect(target_ipa, "ʒ"), "ʒ", russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "ɕː") & str_detect(target_ipa, "ʃ"), "ʃ", russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "v") & str_detect(target_ipa, "w"), "w", russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "zv") & str_detect(target_ipa, "zw"), "zw", russian_ipa),
+         target_ipa = str_remove(target_ipa, "^'"),
+         russian_ipa = if_else(str_remove(target_ipa, "ː") == russian_ipa, target_ipa, russian_ipa),
+         russian_ipa = if_else(str_remove(target_ipa, "ʷ") == russian_ipa, target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "ʐ") & str_detect(target_ipa, "ʒ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "tɕ") & str_detect(target_ipa, "tʃ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "x") & str_detect(target_ipa, "χ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "ɕː") & str_detect(target_ipa, "ʃ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "zv") & str_detect(target_ipa, "zʷ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "sv") & str_detect(target_ipa, "sʷ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "kv") & str_detect(target_ipa, "kʷ"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "v") & str_detect(target_ipa, "w"), target_ipa, russian_ipa),
          # assimilation
          russian_ipa = if_else(str_detect(russian_ipa, "[ZS]") & str_detect(target_ipa, "[zs]"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "[GK]") & str_detect(target_ipa, "[gk]"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "[DT]") & str_detect(target_ipa, "[dt]"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "B") & str_detect(target_ipa, "[bp]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "V") & str_detect(target_ipa, "w"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "Ž") & str_detect(target_ipa, "[ʃʒ]"), target_ipa, russian_ipa),
          # vowel reduction
          russian_ipa = if_else(str_detect(russian_ipa, "[AO]") & str_detect(target_ipa, "[ao]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "[UO]") & str_detect(target_ipa, "[uo]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "U") & str_detect(target_ipa, "u"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "O") & str_detect(target_ipa, "o"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa)) |> 
-  filter(russian_ipa != target_ipa,
-         str_detect(russian_ipa, "0", negate = TRUE),
+  filter(str_detect(russian_ipa, "0", negate = TRUE),
          str_detect(target_ipa, "0", negate = TRUE),
-         russian_ipa == str_to_upper(russian_ipa)) |> 
-  View()
-  
+         #russian_ipa == str_to_upper(russian_ipa),
+         russian_ipa != target_ipa) |> 
+  ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
+
   add_count(language_ref, meaning_ru) |> 
   rename(changes = n) |> 
   left_join(cross_range) |> 
@@ -304,23 +328,23 @@ df |>
   na.omit() ->
   for_modeling
 
-df |> 
-  filter(is.na(derived)) |> 
-  select(language, reference, meaning_ru, match_count, total_segments) |>
-  mutate(changes = total_segments - match_count) |> 
-  rename(total = total_segments) |> 
-  group_by(language, reference,  meaning_ru) |> 
-  mutate(meaing_id = 1:n()) |> 
-  slice_sample(n = 1) |> 
-  left_join(cross_range) |> 
-  distinct(language, reference, meaning_ru, total, changes, year) |> 
-  mutate(ratio = changes/total,
-         language = str_c(language, ": ", reference),
-         language = factor(language),
-         language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
-  filter(changes > 0) |> 
-  na.omit() ->
-  for_modeling
+# df |> 
+#   filter(is.na(derived)) |> 
+#   select(language, reference, meaning_ru, match_count, total_segments) |>
+#   mutate(changes = total_segments - match_count) |> 
+#   rename(total = total_segments) |> 
+#   group_by(language, reference,  meaning_ru) |> 
+#   mutate(meaing_id = 1:n()) |> 
+#   slice_sample(n = 1) |> 
+#   left_join(cross_range) |> 
+#   distinct(language, reference, meaning_ru, total, changes, year) |> 
+#   mutate(ratio = changes/total,
+#          language = str_c(language, ": ", reference),
+#          language = factor(language),
+#          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
+#   filter(changes > 0) |> 
+#   na.omit() ->
+#   for_modeling
 
 for_modeling |> 
   betareg::betareg(I(changes/total) ~ year:language,
@@ -334,14 +358,15 @@ library(ggeffects)
 fit |> 
   ggpredict(terms = c("year [all]", "language")) |> 
   as_tibble() |> 
+  # summarise(range(x))
   ggplot(aes(x, predicted, color = group))+
   geom_line()+
   geom_text(aes(label = group), 
-            data = tibble(x = 1925, 
+            data = tibble(x = 1978, 
                           group = levels(for_modeling$language),
                           predicted = predict(fit,
                                               tibble(language = levels(for_modeling$language),
-                                                     year = 1925))),
+                                                     year = 1978))),
             show.legend = FALSE, hjust = 0) +
   theme_minimal()+
   theme(legend.position = "none")+
@@ -355,7 +380,7 @@ fit |>
                                 "#8E5D4D",
                                 "#EB88CD",
                                 "#F3DD0D")) +
-  xlim(1800, 1960)+
+  xlim(1800, 2020)+
   labs(x = "year of start of active use of word in Russian",
        y = "estimated ratio\nof changes in borrowing")
 
