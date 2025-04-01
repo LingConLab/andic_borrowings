@@ -267,10 +267,11 @@ ngrams |>
 
 df |> 
   filter(is.na(derived)) |> 
-  select(language, reference, russian_ipa, target_ipa, meaning_ru) |>
+  select(language, reference, russian_ipa, target_ipa, meaning_ru, metathesis) |>
   distinct() |> 
   group_by(language, reference,  meaning_ru) |> 
-  mutate(meaing_id = 1:n()) |> 
+  mutate(meaing_id = 1:n(),
+         metathesis = if_else(is.na(metathesis), 0, 1)) |> 
   slice_sample(n = 1) |> 
   mutate(language_ref = str_c(language, ": ", reference),
          russian_ipa = str_remove_all(russian_ipa, "'"),
@@ -278,7 +279,7 @@ df |>
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
   add_count(language_ref, reference, meaning_ru) |> 
-  rename(total = n) |>
+  rename(total = n) |> 
   # palatalisation
   mutate(russian_ipa = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
          target_ipa = if_else(language %in% c("Godoberi", "Tindi"), target_ipa, str_remove(target_ipa, "ʲ")),
@@ -313,16 +314,20 @@ df |>
          #russian_ipa == str_to_upper(russian_ipa),
          russian_ipa != target_ipa) |> 
   #ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
-  add_count(language_ref, meaning_ru) |> 
+  add_count(language_ref, meaning_ru) |>
+  mutate(n = n - metathesis) |> 
   rename(changes = n) |> 
   left_join(cross_range) |> 
-  distinct(language, reference, meaning_ru, total, changes, year) |> 
+  distinct(language, reference, meaning_ru, metathesis, total, changes, year) |> 
   mutate(ratio = changes/total,
          language = str_c(language, ": ", reference),
          language = factor(language),
          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
   na.omit() ->
   for_modeling
+
+for_modeling |> 
+  write_csv("check_me.csv")
 
 for_modeling |> 
   group_by(language) |> 
