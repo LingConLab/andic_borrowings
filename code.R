@@ -273,14 +273,11 @@ df |>
   mutate(meaing_id = 1:n()) |> 
   slice_sample(n = 1) |> 
   mutate(language_ref = str_c(language, ": ", reference),
-         russian_ipa = str_c(russian_ipa, "-#"),
-         target_ipa = str_c(target_ipa, "-#"),
          russian_ipa = str_remove_all(russian_ipa, "'"),
          russian_ipa = str_split(russian_ipa, "-"),
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
   add_count(language_ref, reference, meaning_ru) |> 
-  mutate(n = n - 1) |> 
   rename(total = n) |>
   # palatalisation
   mutate(russian_ipa = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
@@ -311,12 +308,11 @@ df |>
          russian_ipa = if_else(str_detect(russian_ipa, "U") & str_detect(target_ipa, "u"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "O") & str_detect(target_ipa, "o"), target_ipa, russian_ipa),
          russian_ipa = if_else(str_detect(russian_ipa, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa)) |> 
-  filter(str_detect(russian_ipa, "0", negate = TRUE),
-         str_detect(target_ipa, "0", negate = TRUE),
+  filter(#str_detect(russian_ipa, "0", negate = TRUE),
+         #str_detect(target_ipa, "0", negate = TRUE),
          #russian_ipa == str_to_upper(russian_ipa),
          russian_ipa != target_ipa) |> 
-  ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
-
+  #ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
   add_count(language_ref, meaning_ru) |> 
   rename(changes = n) |> 
   left_join(cross_range) |> 
@@ -327,6 +323,14 @@ df |>
          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
   na.omit() ->
   for_modeling
+
+for_modeling |> 
+  group_by(language) |> 
+  mutate(mean_ratio = mean(ratio)) |> 
+  ungroup() |> 
+  mutate(language = fct_reorder(language, mean_ratio)) |> 
+  ggplot(aes(ratio, language))+
+  ggridges::geom_density_ridges()
 
 # df |> 
 #   filter(is.na(derived)) |> 
@@ -362,11 +366,11 @@ fit |>
   ggplot(aes(x, predicted, color = group))+
   geom_line()+
   geom_text(aes(label = group), 
-            data = tibble(x = 1978, 
+            data = tibble(x = 1989, 
                           group = levels(for_modeling$language),
                           predicted = predict(fit,
                                               tibble(language = levels(for_modeling$language),
-                                                     year = 1978))),
+                                                     year = 1989))),
             show.legend = FALSE, hjust = 0) +
   theme_minimal()+
   theme(legend.position = "none")+
@@ -380,7 +384,7 @@ fit |>
                                 "#8E5D4D",
                                 "#EB88CD",
                                 "#F3DD0D")) +
-  xlim(1800, 2020)+
+  xlim(1800, 2060)+
   labs(x = "year of start of active use of word in Russian",
        y = "estimated ratio\nof changes in borrowing")
 
