@@ -72,7 +72,8 @@ df |>
   arrange(meaning_ru) |> 
   filter(meaning_ru != "алжир/ец, -ка") |>
 # в пакете ограничение на 12 запросов, так что делим на группы по 12 лемм
-  mutate(group = rep(1:ceiling(n()/12), each = 12)[1:n()]) ->
+  mutate(group = rep(1:ceiling(n()/12), each = 12)[1:n()],
+         meaning_ru = str_replace(meaning_ru, "ё", "е")) ->
   words_samples
 
 library(ngramr)
@@ -256,15 +257,42 @@ df |>
   mutate(meaing_id = 1:n()) |> 
   slice_sample(n = 1) |> 
   mutate(language_ref = str_c(language, ": ", reference),
-         russian_ipa = str_to_lower(russian_ipa),
+         russian_ipa = str_c(russian_ipa, "-#"),
+         target_ipa = str_c(target_ipa, "-#"),
          russian_ipa = str_remove_all(russian_ipa, "'"),
          target_ipa = str_remove_all(target_ipa, "'"),
          russian_ipa = str_split(russian_ipa, "-"),
          target_ipa = str_split(target_ipa, "-")) |> 
   unnest(c(russian_ipa, target_ipa)) |> 
   add_count(language_ref, reference, meaning_ru) |> 
-  rename(total = n) |> 
-  filter(russian_ipa != target_ipa) |> 
+  mutate(n = n - 1) |> 
+  rename(total = n) |>
+  # palatalisation
+  mutate(russian_ipa = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
+         target_ipa = if_else(language %in% c("Godoberi", "Tindi"), target_ipa, str_remove(target_ipa, "ʲ")),
+         russian_ipa = if_else(str_detect(russian_ipa, "[kg]ʲ"), russian_ipa, str_remove(russian_ipa, "ʲ")),
+         # expected correspondences
+         russian_ipa = str_remove(russian_ipa, "ˌ"),
+         target_ipa = str_remove(target_ipa, "ː(?=[aeou])"),
+         russian_ipa = if_else(str_detect(russian_ipa, "ʐ") & str_detect(target_ipa, "ʒ"), "ʒ", russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "ɕː") & str_detect(target_ipa, "ʃ"), "ʃ", russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "v") & str_detect(target_ipa, "w"), "w", russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "zv") & str_detect(target_ipa, "zw"), "zw", russian_ipa),
+         # assimilation
+         russian_ipa = if_else(str_detect(russian_ipa, "[ZS]") & str_detect(target_ipa, "[zs]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "[GK]") & str_detect(target_ipa, "[gk]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "[DT]") & str_detect(target_ipa, "[dt]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "B") & str_detect(target_ipa, "[bp]"), target_ipa, russian_ipa),
+         # vowel reduction
+         russian_ipa = if_else(str_detect(russian_ipa, "[AO]") & str_detect(target_ipa, "[ao]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "[UO]") & str_detect(target_ipa, "[uo]"), target_ipa, russian_ipa),
+         russian_ipa = if_else(str_detect(russian_ipa, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa)) |> 
+  filter(russian_ipa != target_ipa,
+         str_detect(russian_ipa, "0", negate = TRUE),
+         str_detect(target_ipa, "0", negate = TRUE),
+         russian_ipa == str_to_upper(russian_ipa)) |> 
+  View()
+  
   add_count(language_ref, meaning_ru) |> 
   rename(changes = n) |> 
   left_join(cross_range) |> 
