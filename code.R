@@ -247,9 +247,7 @@ ngrams |>
 
 # regression --------------------------------------------------------------
 
-ngrams <- read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group"))
-
-ngrams |> 
+read_csv("google_ngram_frequency.csv", col_names = c("year", "meaning_ru", "frequency", "corpus", "group")) |> 
   distinct(year, meaning_ru, frequency, corpus) |> 
   group_by(meaning_ru) |> 
   mutate(sum = cumsum(frequency)) |> 
@@ -270,7 +268,7 @@ df |>
   select(language, reference, russian_ipa, target_ipa, meaning_ru, metathesis) |>
   distinct() |> 
   group_by(language, reference,  meaning_ru) |> 
-  mutate(meaing_id = 1:n(),
+  mutate(meaning_id = 1:n(),
          metathesis = if_else(is.na(metathesis), 0, 1)) |> 
   slice_sample(n = 1) |> 
   mutate(language_ref = str_c(language, ": ", reference),
@@ -281,34 +279,43 @@ df |>
   add_count(language_ref, reference, meaning_ru) |> 
   rename(total = n) |> 
   # palatalisation
-  mutate(russian_ipa = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
+  mutate(russian_ipa_new = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
          target_ipa = if_else(language %in% c("Godoberi", "Tindi"), target_ipa, str_remove(target_ipa, "ʲ")),
-         russian_ipa = if_else(str_detect(russian_ipa, "[kg]ʲ"), russian_ipa, str_remove(russian_ipa, "ʲ")),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[kg]ʲ"), russian_ipa_new, str_remove(russian_ipa_new, "ʲ")),
          # expected correspondences
-         russian_ipa = str_remove(russian_ipa, "ˌ"),
+         russian_ipa_new = str_remove(russian_ipa_new, "ˌ"),
          target_ipa = str_remove(target_ipa, "^'"),
-         russian_ipa = if_else(str_remove(target_ipa, "ː") == russian_ipa, target_ipa, russian_ipa),
-         russian_ipa = if_else(str_remove(target_ipa, "ʷ") == russian_ipa, target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "ʐ") & str_detect(target_ipa, "ʒ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "tɕ") & str_detect(target_ipa, "tʃ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "x") & str_detect(target_ipa, "χ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "ɕː") & str_detect(target_ipa, "ʃ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "zv") & str_detect(target_ipa, "zʷ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "sv") & str_detect(target_ipa, "sʷ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "kv") & str_detect(target_ipa, "kʷ"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "v") & str_detect(target_ipa, "w"), target_ipa, russian_ipa),
+         russian_ipa_new = if_else(str_remove(target_ipa, "ː") == russian_ipa_new, target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_remove(target_ipa, "ʷ") == russian_ipa_new, target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "ʐ") & str_detect(target_ipa, "[ʒᴣ]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "tɕ") & str_detect(target_ipa, "tʃ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "x") & str_detect(target_ipa, "χ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "ɕː") & str_detect(target_ipa, "ʃ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "zv") & str_detect(target_ipa, "zʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "sv") & str_detect(target_ipa, "sʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "kv") & str_detect(target_ipa, "kʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "v") & str_detect(target_ipa, "w"), target_ipa, russian_ipa_new),
          # assimilation
-         russian_ipa = if_else(str_detect(russian_ipa, "[ZS]") & str_detect(target_ipa, "[zs]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "[GK]") & str_detect(target_ipa, "[gk]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "[DT]") & str_detect(target_ipa, "[dt]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "B") & str_detect(target_ipa, "[bp]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "V") & str_detect(target_ipa, "w"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "Ž") & str_detect(target_ipa, "[ʃʒ]"), target_ipa, russian_ipa),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[ZS]") & str_detect(target_ipa, "[zs]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[GK]") & str_detect(target_ipa, "[gk]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[DT]") & str_detect(target_ipa, "[dt]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "B") & str_detect(target_ipa, "[bp]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "V") & str_detect(target_ipa, "w"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "Ž") & str_detect(target_ipa, "[ʃʒ]"), target_ipa, russian_ipa_new),
          # vowel reduction
-         russian_ipa = if_else(str_detect(russian_ipa, "[AO]") & str_detect(target_ipa, "[ao]"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "U") & str_detect(target_ipa, "u"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "O") & str_detect(target_ipa, "o"), target_ipa, russian_ipa),
-         russian_ipa = if_else(str_detect(russian_ipa, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa)) |> 
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[AO]") & str_detect(target_ipa, "[ao]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "U") & str_detect(target_ipa, "u"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "O") & str_detect(target_ipa, "o"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa_new),
+         change = if_else(russian_ipa_new == target_ipa, 0, 1),
+         changes = sum(change)-metathesis) |> 
+  select(language, reference, language_ref, meaning_ru, meaning_id, russian_ipa, target_ipa, change, metathesis, total, changes) ->
+  resulting_dataset
+
+resulting_dataset |> 
+  write_csv("check_me.csv", na = "")
+
+resulting_dataset |> 
   filter(#str_detect(russian_ipa, "0", negate = TRUE),
          #str_detect(target_ipa, "0", negate = TRUE),
          #russian_ipa == str_to_upper(russian_ipa),
@@ -316,8 +323,17 @@ df |>
   #ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
   add_count(language_ref, meaning_ru) |>
   mutate(n = n - metathesis) |> 
-  rename(changes = n) |> 
-  left_join(cross_range) |> 
+  rename(changes = n)  |> 
+  distinct(language, reference, meaning_ru, metathesis, total, changes) ->
+  changes
+
+resulting_dataset |> 
+  left_join(changes) |> 
+  mutate(changes = if_else(is.na(changes), 0, changes)) |> 
+  left_join(cross_range) ->
+  final_dataset
+  
+final_dataset |> 
   distinct(language, reference, meaning_ru, metathesis, total, changes, year) |> 
   mutate(ratio = changes/total,
          language = str_c(language, ": ", reference),
@@ -325,9 +341,6 @@ df |>
          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
   na.omit() ->
   for_modeling
-
-for_modeling |> 
-  write_csv("check_me.csv")
 
 for_modeling |> 
   group_by(language) |> 
@@ -356,7 +369,7 @@ for_modeling |>
 #   for_modeling
 
 for_modeling |> 
-  betareg::betareg(I(changes/total) ~ year:language,
+  betareg::betareg(I(changes/total) ~ year+language,
           data = _) ->
   fit
 
