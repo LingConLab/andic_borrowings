@@ -309,42 +309,23 @@ df |>
          russian_ipa_new = if_else(str_detect(russian_ipa_new, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa_new),
          change = if_else(russian_ipa_new == target_ipa, 0, 1),
          changes = sum(change)-metathesis) |> 
-  select(language, reference, language_ref, meaning_ru, meaning_id, russian_ipa, target_ipa, change, metathesis, total, changes) ->
-  resulting_dataset
+  left_join(cross_range) |> 
+  mutate(year_of_word_popularity = if_else(is.na(year), 1993, year)) |> 
+  select(language, reference, language_ref, meaning_ru, meaning_id, year_of_word_popularity, russian_ipa, target_ipa, change, metathesis, total, changes) |> 
+  ungroup() ->
+  final_dataset
 
-resulting_dataset |> 
+final_dataset |> 
   write_csv("check_me.csv", na = "")
 
-resulting_dataset |> 
-  filter(#str_detect(russian_ipa, "0", negate = TRUE),
-         #str_detect(target_ipa, "0", negate = TRUE),
-         #russian_ipa == str_to_upper(russian_ipa),
-         russian_ipa != target_ipa) |> 
-  #ungroup() |> count(russian_ipa, target_ipa, sort = TRUE) |> View()
-  add_count(language_ref, meaning_ru) |>
-  mutate(n = n - metathesis) |> 
-  rename(changes = n)  |> 
-  distinct(language, reference, meaning_ru, metathesis, total, changes) ->
-  changes
-
-resulting_dataset |> 
-  left_join(changes) |> 
-  mutate(changes = if_else(is.na(changes), 0, changes)) |> 
-  left_join(cross_range) ->
-  final_dataset
-  
 final_dataset |> 
-  distinct(language, reference, meaning_ru, metathesis, total, changes, year) |> 
-  mutate(ratio = changes/total,
-         language = str_c(language, ": ", reference),
+  distinct(language, reference, meaning_ru, meaning_id, total, changes, year_of_word_popularity) |> 
+  mutate(language = str_c(language, ": ", reference),
          language = factor(language),
          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
-  na.omit() ->
-  for_modeling
-
-for_modeling |> 
   group_by(language) |> 
-  mutate(mean_ratio = mean(ratio)) |> 
+  mutate(ratio = changes/total,
+         mean_ratio = mean(ratio)) |> 
   ungroup() |> 
   mutate(language = fct_reorder(language, mean_ratio)) |> 
   ggplot(aes(ratio, language))+
@@ -368,43 +349,62 @@ for_modeling |>
 #   na.omit() ->
 #   for_modeling
 
-for_modeling |> 
-  betareg::betareg(I(changes/total) ~ year+language,
-          data = _) ->
-  fit
 
+
+# for_modeling |> 
+#   mutate(ratio = changes/total,
+#          ratio = if_else(ratio == 0, 0.001, ratio)) |> 
+#   betareg::betareg(ratio ~ year_of_word_popularity:language,
+#                    link = "logit", 
+#                    data = _) ->
+#   fit
+
+library(lme4)
+final_dataset |> 
+  lmer(change ~ year_of_word_popularity+language_ref + (1|meaning_ru), data = _) ->
+  fit
+  
 summary(fit)
 
 library(ggeffects)
 
 fit |> 
-  ggpredict(terms = c("year [all]", "language")) |> 
+  ggpredict(terms = c("language_ref")) |> 
   as_tibble() |> 
-  # summarise(range(x))
-  ggplot(aes(x, predicted, color = group))+
-  geom_line()+
-  geom_text(aes(label = group), 
-            data = tibble(x = 1989, 
-                          group = levels(for_modeling$language),
-                          predicted = predict(fit,
-                                              tibble(language = levels(for_modeling$language),
-                                                     year = 1989))),
-            show.legend = FALSE, hjust = 0) +
+  mutate(x = fct_reorder(x, predicted)) |> 
+  ggplot(aes(predicted, x))+
+  geom_linerange(aes(xmin = conf.low, xmax = conf.high)) +
+  geom_point()+
   theme_minimal()+
-  theme(legend.position = "none")+
-  scale_color_manual(values = c("#F78716",
-                                "#93898C",
-                                "#3B8BC6",
-                                "#35A532",
-                                "#E62651",
-                                "#E62651",
-                                "#8D63B9",
-                                "#8E5D4D",
-                                "#EB88CD",
-                                "#F3DD0D")) +
-  xlim(1800, 2060)+
-  labs(x = "year of start of active use of word in Russian",
-       y = "estimated ratio\nof changes in borrowing")
+  labs(x = "probability of change", 
+       y = NULL)
+
+  # # summarise(range(x))
+  # ggplot(aes(x, predicted, color = group))+
+  # geom_line()+
+  # 
+  # geom_text(aes(label = group), 
+  #           data = tibble(x = 1993, 
+  #                         group = levels(for_modeling$language),
+  #                         predicted = predict(fit,
+  #                                             tibble(language = levels(for_modeling$language),
+  #                                                    year_of_word_popularity = 1993))),
+  #           show.legend = FALSE, hjust = 0) +
+  # theme_minimal()+
+  # theme(legend.position = "none")+
+  # scale_color_manual(values = c("#F78716",
+  #                               "#93898C",
+  #                               "#3B8BC6",
+  #                               "#35A532",
+  #                               "#E62651",
+  #                               "#E62651",
+  #                               "#8D63B9",
+  #                               "#8E5D4D",
+  #                               "#EB88CD",
+  #                               "#F3DD0D"))
+  # xlim(1800, 2080)+
+  # labs(x = "year of start of active use of word in Russian",
+  #      y = "estimated ratio\nof changes in borrowing")
 
 read_tsv("/home/agricolamz/work/databases/TALD/data/tald_villages.csv") |>
   filter(aff == "Avar-Andic",
