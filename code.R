@@ -315,11 +315,17 @@ df |>
   ungroup() ->
   final_dataset
 
-final_dataset |> 
-  write_csv("check_me.csv", na = "")
+# final_dataset |> 
+#   write_csv("check_me.csv", na = "")
+
+read_csv("check_me.csv") |> 
+  mutate(year = case_when(year == "0" ~ "pre-Soviet",
+                          year == "1" ~ "Soviet",
+                          year == "2" ~ "questionable")) ->
+final_dataset
 
 final_dataset |> 
-  distinct(language, reference, meaning_ru, meaning_id, total, changes, year_of_word_popularity) |> 
+  distinct(language, reference, meaning_ru, meaning_id, total, changes) |> 
   mutate(language = str_c(language, ": ", reference),
          language = factor(language),
          language = fct_relevel(language, "Avar: Gimbatov 2006")) |> 
@@ -330,6 +336,55 @@ final_dataset |>
   mutate(language = fct_reorder(language, mean_ratio)) |> 
   ggplot(aes(ratio, language))+
   ggridges::geom_density_ridges()
+
+
+final_dataset |> 
+  mutate(russian_ipa_new = if_else(language %in% c("Godoberi", "Tindi"), russian_ipa, str_remove(russian_ipa, "ʲ")),
+         target_ipa = if_else(language %in% c("Godoberi", "Tindi"), target_ipa, str_remove(target_ipa, "ʲ")),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[kg]ʲ"), russian_ipa_new, str_remove(russian_ipa_new, "ʲ")),
+         # expected correspondences
+         russian_ipa_new = str_remove(russian_ipa_new, "ˌ"),
+         target_ipa = str_remove(target_ipa, "^'"),
+         russian_ipa_new = if_else(str_remove(target_ipa, "ː") == russian_ipa_new, target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_remove(target_ipa, "ʷ") == russian_ipa_new, target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "ʐ") & str_detect(target_ipa, "[ʒᴣ]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "tɕ") & str_detect(target_ipa, "tʃ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "x") & str_detect(target_ipa, "χ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "ɕː") & str_detect(target_ipa, "ʃ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "zv") & str_detect(target_ipa, "zʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "sv") & str_detect(target_ipa, "sʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "kv") & str_detect(target_ipa, "kʷ"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "v") & str_detect(target_ipa, "w"), target_ipa, russian_ipa_new),
+         # assimilation
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[ZS]") & str_detect(target_ipa, "[zs]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[GK]") & str_detect(target_ipa, "[gk]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[DT]") & str_detect(target_ipa, "[dt]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "B") & str_detect(target_ipa, "[bp]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "V") & str_detect(target_ipa, "w"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "Ž") & str_detect(target_ipa, "[ʃʒ]"), target_ipa, russian_ipa_new),
+         # vowel reduction
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[AO]") & str_detect(target_ipa, "[ao]"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "U") & str_detect(target_ipa, "u"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "O") & str_detect(target_ipa, "o"), target_ipa, russian_ipa_new),
+         russian_ipa_new = if_else(str_detect(russian_ipa_new, "[IE]") & str_detect(target_ipa, "[ie]"), target_ipa, russian_ipa_new)) |> 
+  count(language_ref, russian_ipa_new, target_ipa) |> 
+  mutate(corresp = str_c(russian_ipa_new, ":", target_ipa)) |> 
+  select(-russian_ipa_new, -target_ipa) |> 
+  distinct() |> 
+  na.omit() |> 
+  pivot_wider(names_from = corresp, values_from = n, values_fill = 0) |> 
+  column_to_rownames("language_ref") |> 
+  ca::ca() ->
+  ca
+
+ca$rowcoord |> 
+  as.data.frame() |> 
+  rownames_to_column("settlement") |> 
+  ggplot(aes(Dim1, Dim2, label = settlement))+
+  geom_point()+
+  ggrepel::geom_label_repel()+
+  theme_minimal()
+
 
 # df |> 
 #   filter(is.na(derived)) |> 
@@ -361,23 +416,76 @@ final_dataset |>
 
 library(lme4)
 final_dataset |> 
-  lmer(change ~ year_of_word_popularity+language_ref + (1|meaning_ru), data = _) ->
+  lmer(change ~ language_ref:year + (1|meaning_ru), data = _) ->
   fit
   
 summary(fit)
 
 library(ggeffects)
 
+final_dataset |> 
+  distinct(language_ref, meaning_ru, meaning_id) |> 
+  count(language_ref) |> 
+  rename(x = language_ref,
+         word_list_size = n) ->
+  word_list_size
+
+
 fit |> 
-  ggpredict(terms = c("language_ref")) |> 
+  ggpredict(terms = c("language_ref", "year")) |> 
   as_tibble() |> 
+  left_join(word_list_size) |> 
   mutate(x = fct_reorder(x, predicted)) |> 
-  ggplot(aes(predicted, x))+
+  ggplot(aes(predicted, x, color = group))+
   geom_linerange(aes(xmin = conf.low, xmax = conf.high)) +
-  geom_point()+
+  geom_point(aes(size = word_list_size), show.legend = FALSE)+
+  ggrepel::geom_text_repel(aes(label = word_list_size))+
   theme_minimal()+
   labs(x = "probability of change", 
-       y = NULL)
+       y = NULL)+
+  theme(text = element_text(size = 16))
+
+final_dataset |> 
+  filter(change == 1) |> 
+  distinct(meaning_ru) |> 
+  pull(meaning_ru) ->
+  with_changes
+
+library(lme4)
+final_dataset |> 
+  filter(meaning_ru %in% with_changes) |> 
+  lmer(change ~ language_ref + (1|meaning_ru), data = _) ->
+  fit
+
+summary(fit)
+
+library(ggeffects)
+
+final_dataset |> 
+  filter(meaning_ru %in% with_changes) |> 
+  distinct(language_ref, meaning_ru, meaning_id, year) |> 
+  count(language_ref, year) |> 
+  rename(x = language_ref,
+         word_list_size = n) ->
+  word_list_size
+
+
+fit |> 
+  ggpredict(terms = c("language_ref", "year")) |> 
+  as_tibble() |>
+  left_join(word_list_size) |> 
+  mutate(x = str_c(x, " (", word_list_size, ")"),
+         x = fct_reorder(x, predicted)) |> 
+  ggplot(aes(predicted, x, color = group))+
+  geom_linerange(aes(xmin = conf.low, xmax = conf.high), position = position_dodge(width = 0.5)) +
+  geom_point(show.legend = FALSE, position = position_dodge(width = 0.5))+
+  #geom_text(aes(label = word_list_size))+
+  theme_minimal()+
+  labs(x = "probability of change", 
+       caption = "only lemmata with changes are filtered",
+       y = NULL)+
+  theme(text = element_text(size = 16))
+
 
   # # summarise(range(x))
   # ggplot(aes(x, predicted, color = group))+
@@ -409,20 +517,57 @@ fit |>
 read_tsv("/home/agricolamz/work/databases/TALD/data/tald_villages.csv") |>
   filter(aff == "Avar-Andic",
          lat > 41.9,
-         lat < 43.3,
-         lon < 46.7) ->
+         lat < 42.9,
+         lon < 46.9,
+         !(village %in% c("Tivi", "Kenkhi", "Sachada", "Urukh-Sota", "Gochob", "Artlukh", "Imanaliroso", "Akhtachikan", "Inkvalita"))) ->
   filtered_langs
 
 library(lingtypology)
 map.feature(filtered_langs$lang,
+            label = filtered_langs$village,
             features = filtered_langs$lang,
             latitude = filtered_langs$lat,
             longitude = filtered_langs$lon,
             minimap = TRUE, 
             minimap.position = "bottomleft",
-            legend.position = "topleft",
-            tile = "Esri.WorldGrayCanvas")
+            legend.position = "topleft")
 
-  ggplot(aes(lon, lat, color = lang))+
-  geom_point()
-  ggrepel::geom_text_repel()
+# final model -------------------------------------------------------------
+read_csv("check_me.csv") |> 
+    mutate(year = case_when(year == "0" ~ "pre-Soviet",
+                            year == "1" ~ "Soviet",
+                            year == "2" ~ "Soviet")) ->
+    final_dataset
+
+library(lme4)
+final_dataset |> 
+  lmer(change ~ language_ref:year + (1|meaning_ru), data = _) ->
+  fit
+  
+summary(fit)
+  
+library(ggeffects)
+  
+final_dataset |> 
+    distinct(language_ref, meaning_ru, meaning_id) |> 
+    count(language_ref) |> 
+    rename(x = language_ref,
+           word_list_size = n) ->
+    word_list_size
+  
+  
+fit |> 
+  ggpredict(terms = c("language_ref", "year")) |> 
+  as_tibble() |>
+  left_join(word_list_size) |> 
+  mutate(x = str_c(x, " (", word_list_size, " lemmata)"),
+         x = fct_reorder(x, predicted)) |> 
+  ggplot(aes(predicted, x, color = group))+
+  geom_linerange(aes(xmin = conf.low, xmax = conf.high), position = position_dodge(width = 0.5)) +
+  geom_point(show.legend = FALSE, position = position_dodge(width = 0.5))+
+  #geom_text(aes(label = word_list_size))+
+  theme_minimal()+
+  labs(x = "model prediction of the probability of change", 
+       y = NULL)+
+  theme(text = element_text(size = 16),
+        legend.position = "bottom")
