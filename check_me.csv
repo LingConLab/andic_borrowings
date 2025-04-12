@@ -355,7 +355,7 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,адвокат,1,a,a,no_change,0,8,
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,адвокат,1,t,t,no_change,0,8,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,адвокат,1,0,i,change,0,8,1,Pre-Soviet,paragoge
 Andi,Salimov 2010,Andi: Salimov 2010,акация,1,A,a,no_change,0,7,2,Pre-Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,акация,1,k,kː,no_change,0,7,2,Pre-Soviet,abruptive
+Andi,Salimov 2010,Andi: Salimov 2010,акация,1,k,kː,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,акация,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,акация,1,ts,ts,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,акация,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
@@ -7767,14 +7767,14 @@ Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конверт,
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конверт,1,e,e,no_change,0,7,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конверт,1,r,r,no_change,0,7,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конверт,1,t,t,no_change,0,7,0,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,k,kʲ,change,0,8,1,Pre-Soviet,palatalization
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,O,a,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,n,n,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,vʲ,w,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,e,e,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,r,r,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,t,t,no_change,0,8,1,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,I,i,no_change,0,8,1,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,k,kʲ,change,0,8,2,Pre-Soviet,palatalization
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,O,a,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,n,n,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,vʲ,w,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,e,e,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,r,r,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,t,t,no_change,0,8,2,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,конверт,1,0,i,change,0,8,2,Pre-Soviet,paragoge
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конвой,1,k,k,no_change,0,6,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конвой,1,O,a,no_change,0,6,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",конвой,1,n,n,no_change,0,6,0,Pre-Soviet,no_change
@@ -8350,7 +8350,7 @@ Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,O,e,change,0,7,3,Pre-Sovie
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,pʲ,p,no_change,0,7,3,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,e,e,no_change,0,7,3,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,j,0,change,0,7,3,Pre-Soviet,mid_elision
-Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,k,kː,no_change,0,7,3,Pre-Soviet,abruptive
+Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,k,kː,no_change,0,7,3,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,A,i,change,0,7,3,Pre-Soviet,other
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,k,k,no_change,0,7,2,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,O,a,no_change,0,7,2,Pre-Soviet,no_change
@@ -15068,9 +15068,9 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,райцентр,1,0,a,change,0,9,1
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",рак,1,r,r,no_change,0,3,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",рак,1,a,a,no_change,0,3,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azayev 2019","Botlikh: Alekseev, Azayev 2019",рак,1,k,k,no_change,0,3,0,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,r,r,no_change,0,3,0,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,a,a,no_change,0,3,0,Pre-Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,k,k,no_change,0,3,0,Pre-Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,r,r,no_change,0,3,0,Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,a,a,no_change,0,3,0,Soviet,no_change
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,рак,1,k,k,no_change,0,3,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,ракета,1,r,r,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,ракета,1,A,a,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,ракета,1,kʲ,k,no_change,0,6,0,Pre-Soviet,no_change
