@@ -19,7 +19,7 @@ warnings: false
 message: false
 bibliography: bibliography.bib
 nocite: |
-  @ggeffects @inspectdf @quarto @tidyverse
+  @ggeffects @inspectdf @quarto @tidyverse @scales @tidytext
 ---
 
 ```{r}
@@ -31,14 +31,25 @@ library(tidyverse)
 library(lme4)
 theme_set(theme_minimal() + theme(text = element_text(size = 16)))
 
-read_csv("../check_me.csv") |> 
-  select(language, reference, meaning_ru, russian_ipa, target_ipa, change, total, changes, year) |>
-  mutate(year = case_when(year == "0" ~ "pre-Soviet",
-                            year == "1" ~ "Soviet",
-                            year == "2" ~ "Soviet"),
-         change = if_else(change == "1", "change present", "no change")) |> 
-  rename(dictionary_translation = meaning_ru, 
-         time_of_borrowing = year) |> 
+df <- read_csv("../check_me.csv")
+df |> 
+  select(language, reference, meaning_ru, russian_ipa, target_ipa, change, total_units_per_word, changes_per_word, type_of_change, time_of_borrowing) |> 
+  rename(russian_source_lexeme = meaning_ru) |> 
+  mutate(type_of_change = case_when(type_of_change == "abruptive" ~ "ejectivization",
+                                    type_of_change == "apocope" ~ "final vowel deletion",
+                                    type_of_change == "epenthesis_c" ~ "middle consonant epenthesis",
+                                    type_of_change == "epenthesis_v" ~ "middle vowel epenthesis",
+                                    type_of_change == "fin_elision" ~ "final consonant deletion",
+                                    type_of_change == "init_elision" ~ "initial consonant deletion",
+                                    type_of_change == "init_elision_c" ~ "initial consonant deletion",
+                                    type_of_change == "mid_elision" ~ "middle consonant deletion",
+                                    type_of_change == "mid_elision_v" ~ "middle vowel deletion",
+                                    type_of_change == "no_palatalization" ~ "omission of palatalization",
+                                    type_of_change == "palatalization, abruptive" ~ "palatalization, ejectivization",
+                                    type_of_change == "paragoge" ~ "final vowel epenthesis",
+                                    type_of_change == "prothesis" ~ "initial vowel epenthesis",
+                                    type_of_change == "prothesis_c" ~ "initial consonant epenthesis",
+                                    TRUE ~ type_of_change)) |> 
   write_csv("data.csv", na = "")
 ```
 
@@ -76,13 +87,14 @@ library(inspectdf)
 
 df |> 
   mutate_all(as.factor) |> 
-  select(language, reference, change, total, changes, time_of_borrowing) |> 
+  select(language, reference, change, total_units_per_word, changes_per_word, time_of_borrowing, type_of_change) |> 
   rename(`(1.1) language` = language,
          `(1.2) reference` = reference,
          `(1.3) change` = change,
-         `(1.4) total units per word` = total,
-         `(1.5) changes per word` = changes,
-         `(1.6) time of borrowing` = time_of_borrowing) |> 
+         `(1.4) total units per word` = total_units_per_word,
+         `(1.5) changes per word` = changes_per_word,
+         `(1.6) type of change` = type_of_change,
+         `(1.7) time of borrowing` = time_of_borrowing) |> 
   inspect_cat()   |> 
   show_plot()+
   labs(title = NULL, subtitle = NULL, text = element_text(size = 30))+
@@ -99,13 +111,14 @@ library(inspectdf)
 
 df |> 
   mutate_all(as.factor) |> 
-  select(language, reference, change, total, changes, time_of_borrowing) |> 
+  select(language, reference, change, total_units_per_word, changes_per_word, time_of_borrowing, type_of_change) |> 
   rename(`(1.1) language` = language,
          `(1.2) reference` = reference,
          `(1.3) change` = change,
-         `(1.4) total units per word` = total,
-         `(1.5) changes per word` = changes,
-         `(1.6) time of borrowing` = time_of_borrowing) |> 
+         `(1.4) total units per word` = total_units_per_word,
+         `(1.5) changes per word` = changes_per_word,
+         `(1.6) type of change` = type_of_change,
+         `(1.7) time of borrowing` = time_of_borrowing) |> 
   inspect_cat()   |> 
   show_plot()+
   labs(title = NULL, subtitle = NULL, text = element_text(size = 30))+
@@ -118,6 +131,104 @@ knitr::include_graphics("df_structure.png")
 
 ## Distribution of changes across languages
 
+```{r}
+#| eval: false
+
+df |> 
+  select(language_ref, type_of_change) |> 
+  filter(type_of_change != "no_change",
+         type_of_change != "other") |> 
+  mutate(type_of_change = str_split(type_of_change, ", ")) |> 
+  unnest(type_of_change) |> 
+  count(language_ref, type_of_change) |>  
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
+  ggplot(aes(n, type_of_change))+
+  geom_col(show.legend = FALSE)+
+  facet_wrap(~language_ref, scales = "free", ncol = 2)+
+  tidytext::scale_y_reordered()+
+  scale_x_continuous(breaks = scales::breaks_pretty())+
+  labs(x = NULL,
+       y = NULL)+
+  theme_minimal()
+```
+
+```{r}
+#| fig-cap: "Frequency of each change by language"
+#| out-width: 100%
+#| echo: false
+#| warning: false
+
+df |> 
+  select(language_ref, type_of_change) |> 
+  filter(type_of_change != "no_change",
+         type_of_change != "other") |> 
+  mutate(type_of_change = str_split(type_of_change, ", ")) |> 
+  unnest(type_of_change) |> 
+  count(language_ref, type_of_change) |>  
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
+  ggplot(aes(n, type_of_change))+
+  geom_col(show.legend = FALSE)+
+  facet_wrap(~language_ref, scales = "free", ncol = 2)+
+  tidytext::scale_y_reordered()+
+  scale_x_continuous(breaks = scales::breaks_pretty())+
+  labs(x = NULL,
+       y = NULL)+
+  theme_minimal() ->
+  changes_frequency
+ggsave("changes_frequency.png", plot = changes_frequency, width = 9, height = 11, 
+       bg = "white")
+knitr::include_graphics("changes_frequency.png")
+```
+
+```{r}
+#| include: false
+
+df |> 
+  filter(time_of_borrowing == "Soviet",
+         type_of_change != "other",
+         type_of_change != "no_change") |> 
+  select(language_ref, type_of_change) |> 
+  mutate(type_of_change = str_split(type_of_change, ", ")) |> 
+  unnest(type_of_change) |> 
+  count(language_ref, type_of_change) |>  
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
+  ggplot(aes(n, type_of_change))+
+  geom_col(show.legend = FALSE)+
+  facet_wrap(~language_ref, scales = "free", ncol = 2)+
+  tidytext::scale_y_reordered()+
+  scale_x_continuous(breaks = scales::breaks_pretty())+
+  labs(x = NULL,
+       y = NULL,
+       caption = "Soviet borrowings")+
+  theme_minimal() ->
+  changes_frequency_soviet
+ggsave("changes_frequency_soviet.png", plot = changes_frequency_soviet, width = 9, height = 9, 
+       bg = "white")
+
+df |> 
+  filter(time_of_borrowing == "Pre-Soviet",
+         type_of_change != "other",
+         type_of_change != "no_change") |> 
+  select(language_ref, type_of_change) |> 
+  mutate(type_of_change = str_split(type_of_change, ", ")) |> 
+  unnest(type_of_change) |> 
+  count(language_ref, type_of_change) |>  
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
+  ggplot(aes(n, type_of_change))+
+  geom_col(show.legend = FALSE)+
+  facet_wrap(~language_ref, scales = "free", ncol = 2)+
+  tidytext::scale_y_reordered()+
+  scale_x_continuous(breaks = scales::breaks_pretty())+
+  labs(x = NULL,
+       y = NULL,
+       caption = "pre-Soviet borrowings")+
+  theme_minimal() ->
+  changes_frequency_pre_soviet
+ggsave("changes_frequency_pre_soviet.png", plot = changes_frequency_pre_soviet, width = 9, height = 9, 
+       bg = "white")
+```
+
+
 ## Modeling {#sec-modeling}
 
 We decided to create a model that predicts the average number of changes based on the resource and approximated time of borrowing. We applied a mixed effect logistic regression model. The models were generated with the R [@r] package `lme4` [@bates15] with the following formula:
@@ -126,17 +237,17 @@ We decided to create a model that predicts the average number of changes based o
 change ~ (language resource):approximated time of borrowing + (1|dictionary lemma translation)
 ```
 
-The random effect of the model is unified dictionary lemma translation. We included in the model interaction of two variables: language resource and approximated time of borrowing. Since this model will compare values with some baseline Soviet borrowings from Avar dictionary (Gimbatov 2006) were used as a baseline. All language resources turn out to be statistically significantly different from Avar. Approximated time of borrowing turned out not to be statistically significant (p-value = 0.112855).
+The random effect of the model is unified dictionary lemma translation. We included in the model interaction of two variables: language resource and approximated time of borrowing. Since this model will compare values with some baseline Soviet borrowings from Avar dictionary (Gimbatov 2006) were used as a baseline. All language resources turn out to be statistically significantly different from Avar. Approximated time of borrowing turned out not to be statistically significant (p-value = 0.134120). Just a few interactions of language resources variable with the time of borrowing variable turn out to be statistically signifficant: for Andi and for Tindi.
 
 ```{r}
 library(lme4)
 library(lmerTest)
 
 df |> 
-  mutate(change = if_else(change == "no change", 0, 1),
+  mutate(change = if_else(change == "no_change", 0, 1),
          time_of_borrowing = fct_relevel(time_of_borrowing, "Soviet"),
          language_ref = fct_relevel(language_ref, "Avar: Gimbatov 2006")) |> 
-  lmer(change ~ time_of_borrowing*language_ref + (1|dictionary_translation), data = _) ->
+  lmer(change ~ time_of_borrowing*language_ref + (1|russian_source_lexeme), data = _) ->
   fit
 
 summary(fit)
@@ -150,7 +261,7 @@ The model predictions are visualized with effect plots.
 library(ggeffects)
   
 df |> 
-    distinct(language_ref, dictionary_translation) |> 
+    distinct(language_ref, russian_source_lexeme) |> 
     count(language_ref) |> 
     rename(x = language_ref,
            word_list_size = n) ->
@@ -183,7 +294,7 @@ fit |>
 library(ggeffects)
   
 df |> 
-    distinct(language_ref, dictionary_translation) |> 
+    distinct(language_ref, russian_source_lexeme) |> 
     count(language_ref) |> 
     rename(x = language_ref,
            word_list_size = n) ->
@@ -221,7 +332,7 @@ In the following table, we list all R packages and R version used in the project
 #| echo: false
 #| tbl-cap: "The list of versions of R packages used in the project"
 
-packages <- c("quarto", "tidyverse", "inspectdf", "lme4", "ggeffects")
+packages <- c("quarto", "tidyverse", "inspectdf", "lme4", "ggeffects", "scales", "tidytext")
 map(packages, function(i){
   tibble(package = i,
          version = as.character(packageVersion(i)),
