@@ -32,6 +32,15 @@ library(lme4)
 theme_set(theme_minimal() + theme(text = element_text(size = 16)))
 
 df <- read_csv("../check_me.csv")
+
+read_tsv("../rus_freq_dict.csv") |> 
+  select(Lemma, Freq.ipm.) |> 
+  rename(lemma_frequency_ipm = Freq.ipm.,
+         russian_source_lexeme = Lemma) |> 
+  group_by(russian_source_lexeme) |> 
+  slice_max(lemma_frequency_ipm) ->
+  freq
+
 df |> 
   select(language, reference, meaning_ru, russian_ipa, target_ipa, change, total_units_per_word, changes_per_word, type_of_change, time_of_borrowing) |> 
   rename(russian_source_lexeme = meaning_ru) |> 
@@ -50,6 +59,7 @@ df |>
                                     type_of_change == "prothesis" ~ "initial vowel epenthesis",
                                     type_of_change == "prothesis_c" ~ "initial consonant epenthesis",
                                     TRUE ~ type_of_change)) |> 
+  left_join(freq) |> 
   write_csv("data.csv", na = "")
 ```
 
@@ -70,7 +80,8 @@ The dataset consists of `r nrow(df)` observations with the following columns:
 
 - `language`: language
 - `reference`: source of data
-- `dictionary_translation`: unified dictinary translation 
+- `dictionary_translation`: unified dictinary translation
+- `lemma frequency_ipm`: frequency of the dictinary translation in RNC;
 - `russian_ipa`: IPA transcription of russian word or part of the word with some modifications;
 - `target_ipa`: IPA transcription of target language word;
 - `change`: coding for the change;
@@ -78,7 +89,7 @@ The dataset consists of `r nrow(df)` observations with the following columns:
 - `changes`: number of observed changes;
 - `time_of_borrowing`: time of borrowing approximated using Russian National Corpus.
 
-Here is a most frequent values in the subsample of variables (variables `dictionary_translation`, `russian_ipa` and `target_ipa` are ommited due to the huge amount of values).
+Here is a most frequent values in the subsample of variables (variables `dictionary_translation`, `lemma frequency_ipm`, `russian_ipa` and `target_ipa` are ommited due to the huge amount of values).
 
 ```{r}
 #| eval: false
@@ -245,9 +256,10 @@ library(lmerTest)
 
 df |> 
   mutate(change = if_else(change == "no_change", 0, 1),
+         lemma_frequency_ipm = if_else(is.na(lemma_frequency_ipm), log(0.0001), log(lemma_frequency_ipm)),
          time_of_borrowing = fct_relevel(time_of_borrowing, "Soviet"),
          language_ref = fct_relevel(language_ref, "Avar: Gimbatov 2006")) |> 
-  lmer(change ~ time_of_borrowing*language_ref + (1|russian_source_lexeme), data = _) ->
+  lmer(change ~ time_of_borrowing*language_ref+lemma_frequency_ipm + (1|russian_source_lexeme), data = _) ->
   fit
 
 summary(fit)
