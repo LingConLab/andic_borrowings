@@ -80,14 +80,15 @@ The dataset consists of `r nrow(df)` observations with the following columns:
 
 - `language`: language
 - `reference`: source of data
-- `dictionary_translation`: unified dictinary translation
-- `lemma frequency_ipm`: frequency of the dictinary translation in RNC;
-- `russian_ipa`: IPA transcription of russian word or part of the word with some modifications;
+- `dictionary_translation`: unified dictionary translation
+- `lemma_frequency_ipm`: frequency of the dictionary translation in RNC;
+- `russian_ipa`: modified IPA transcription of the Russian word or part of the word;
 - `target_ipa`: IPA transcription of target language word;
-- `change`: coding for the change;
+- `change`: binary coding for the change;
+- `type_of_change`: coding of the type of change (e.g., apocope, epenthesis, metathesis, and others);
 - `total`: total number of units in the analysis;
 - `changes`: number of observed changes;
-- `time_of_borrowing`: time of borrowing approximated using Russian National Corpus.
+- `time_of_borrowing`: approximate time of borrowing based on data from the RNC.
 
 Here is a most frequent values in the subsample of variables (variables `dictionary_translation`, `lemma frequency_ipm`, `russian_ipa` and `target_ipa` are ommited due to the huge amount of values).
 
@@ -99,13 +100,13 @@ library(inspectdf)
 df |> 
   mutate_all(as.factor) |> 
   select(language, reference, change, total_units_per_word, changes_per_word, time_of_borrowing, type_of_change) |> 
-  rename(`(1.1) language` = language,
-         `(1.2) reference` = reference,
-         `(1.3) change` = change,
-         `(1.4) total units per word` = total_units_per_word,
-         `(1.5) changes per word` = changes_per_word,
-         `(1.6) type of change` = type_of_change,
-         `(1.7) time of borrowing` = time_of_borrowing) |> 
+  rename(`(1) language` = language,
+         `(2) reference` = reference,
+         `(3) change` = change,
+         `(4) total units per word` = total_units_per_word,
+         `(5) changes per word` = changes_per_word,
+         `(6) type of change` = type_of_change,
+         `(7) time of borrowing` = time_of_borrowing) |> 
   inspect_cat()   |> 
   show_plot()+
   labs(title = NULL, subtitle = NULL, text = element_text(size = 30))+
@@ -123,13 +124,13 @@ library(inspectdf)
 df |> 
   mutate_all(as.factor) |> 
   select(language, reference, change, total_units_per_word, changes_per_word, time_of_borrowing, type_of_change) |> 
-  rename(`(1.1) language` = language,
-         `(1.2) reference` = reference,
-         `(1.3) change` = change,
-         `(1.4) total units per word` = total_units_per_word,
-         `(1.5) changes per word` = changes_per_word,
-         `(1.6) type of change` = type_of_change,
-         `(1.7) time of borrowing` = time_of_borrowing) |> 
+  rename(`(1) language` = language,
+         `(2) reference` = reference,
+         `(3) change` = change,
+         `(4) total units per word` = total_units_per_word,
+         `(5) changes per word` = changes_per_word,
+         `(6) type of change` = type_of_change,
+         `(7) time of borrowing` = time_of_borrowing) |> 
   inspect_cat()   |> 
   show_plot()+
   labs(title = NULL, subtitle = NULL, text = element_text(size = 30))+
@@ -146,21 +147,25 @@ knitr::include_graphics("df_structure.png")
 #| eval: false
 
 df |> 
-  select(language_ref, type_of_change) |> 
+  select(language_ref, type_of_change, time_of_borrowing) |> 
   filter(type_of_change != "no_change",
          type_of_change != "other") |> 
   mutate(type_of_change = str_split(type_of_change, ", ")) |> 
   unnest(type_of_change) |> 
-  count(language_ref, type_of_change) |>  
-  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
-  ggplot(aes(n, type_of_change))+
-  geom_col(show.legend = FALSE)+
+  add_count(language_ref, type_of_change) |> 
+  count(language_ref, type_of_change, time_of_borrowing, n) |> 
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref),
+         time_of_borrowing = fct_relevel(time_of_borrowing, "Soviet")) |> 
+  ggplot(aes(nn, type_of_change, fill = time_of_borrowing))+
+  geom_col()+
   facet_wrap(~language_ref, scales = "free", ncol = 2)+
   tidytext::scale_y_reordered()+
   scale_x_continuous(breaks = scales::breaks_pretty())+
   labs(x = NULL,
-       y = NULL)+
-  theme_minimal()
+       y = NULL,
+       fill = NULL)+
+  theme_minimal()+
+  theme(legend.position = "bottom")
 ```
 
 ```{r}
@@ -170,21 +175,25 @@ df |>
 #| warning: false
 
 df |> 
-  select(language_ref, type_of_change) |> 
+  select(language_ref, type_of_change, time_of_borrowing) |> 
   filter(type_of_change != "no_change",
          type_of_change != "other") |> 
   mutate(type_of_change = str_split(type_of_change, ", ")) |> 
   unnest(type_of_change) |> 
-  count(language_ref, type_of_change) |>  
-  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref)) |> 
-  ggplot(aes(n, type_of_change))+
-  geom_col(show.legend = FALSE)+
+  add_count(language_ref, type_of_change) |> 
+  count(language_ref, type_of_change, time_of_borrowing, n) |> 
+  mutate(type_of_change = tidytext::reorder_within(type_of_change,  n, language_ref),
+         time_of_borrowing = fct_relevel(time_of_borrowing, "Soviet")) |> 
+  ggplot(aes(nn, type_of_change, fill = time_of_borrowing))+
+  geom_col()+
   facet_wrap(~language_ref, scales = "free", ncol = 2)+
   tidytext::scale_y_reordered()+
   scale_x_continuous(breaks = scales::breaks_pretty())+
   labs(x = NULL,
-       y = NULL)+
-  theme_minimal() ->
+       y = NULL,
+       fill = NULL)+
+  theme_minimal()+
+  theme(legend.position = "bottom") ->
   changes_frequency
 ggsave("changes_frequency.png", plot = changes_frequency, width = 9, height = 11, 
        bg = "white")
@@ -242,13 +251,13 @@ ggsave("changes_frequency_pre_soviet.png", plot = changes_frequency_pre_soviet, 
 
 ## Modeling {#sec-modeling}
 
-We decided to create a model that predicts the average number of changes based on the resource and approximated time of borrowing. We applied a mixed effect logistic regression model. The models were generated with the R [@r] package `lme4` [@bates15] with the following formula:
+We decided to create a model that predicts the average number of changes based on the dictionary and approximated time of borrowing. To do so, we applied a mixed effect logistic regression model. The models were generated with the R [@r] package `lme4` [@bates15] with the following formula:
 
 ```
-change ~ (language resource):approximated time of borrowing + (1|dictionary lemma translation)
+change ~ dictionary*approximated time of borrowing + dictionary translation frequency + (1|dictionary lemma translation)
 ```
 
-The random effect of the model is unified dictionary lemma translation. We included in the model interaction of two variables: language resource and approximated time of borrowing. Since this model will compare values with some baseline Soviet borrowings from Avar dictionary (Gimbatov 2006) were used as a baseline. All language resources turn out to be statistically significantly different from Avar. Approximated time of borrowing turned out not to be statistically significant (p-value = 0.134120). Just a few interactions of language resources variable with the time of borrowing variable turn out to be statistically signifficant: for Andi and for Tindi.
+The random effect of the model is unified dictionary lemma translation. We included in the model interaction of two variables: language resource and approximated time of borrowing. Since this model will compare values with some baseline Soviet borrowings from Avar dictionary (Gimbatov 2006) were used as a baseline. Differences between all dictionaries turn out to be statistically significant. Approximated time of borrowing (p-value = 0.07570) and dictionary translation frequency (p-value = 0.05672) turned out not to be statistically significant. Just a few interactions of language resources variable with the time of borrowing variable turn out to be statistically significant: for Andi and for Tindi.
 
 ```{r}
 library(lme4)
@@ -292,13 +301,13 @@ fit |>
   labs(x = "model prediction of the probability of change", 
        y = NULL,
        color = NULL)+
-  theme(text = element_text(size = 16),
+  theme(text = element_text(size = 19),
         legend.position = "bottom")
 ```
 
 ```{r}
 #| label: "fig-model-predictions1"
-#| fig-cap: "Probabilities of change by language, source and approximated time of borrowing"
+#| fig-cap: "Probabilities of change by language, source and approximate time of borrowing with 95% confidence intervals."
 #| warning: false
 #| out-width: 100%
 #| echo: false
@@ -325,7 +334,7 @@ fit |>
   labs(x = "model prediction of the probability of change", 
        y = NULL,
        color = NULL)+
-  theme(text = element_text(size = 16),
+  theme(text = element_text(size = 19),
         legend.position = "bottom") ->
   model_predictions
 
