@@ -1641,7 +1641,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",бинт,1,t,t,no
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,bʲ,b,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,i,i,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,r,r,no_change,0,5,1,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,k,k',change,0,5,1,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,бирка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,бирка,1,bʲ,b,no_change,0,5,0,Pre-Soviet,no_change
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,бирка,1,i,i,no_change,0,5,0,Pre-Soviet,no_change
@@ -1779,7 +1779,7 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,b,p,change,0,6,3,Sovie
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,O,a,no_change,0,6,3,Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,sʲ,s,no_change,0,6,3,Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,a,a,no_change,0,6,3,Soviet,no_change
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,k,kʲ,change,0,6,3,Soviet,other
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,k,kʲ,change,0,6,3,Soviet,palatalization
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,босяк,1,0,i,change,0,6,3,Soviet,paragoge
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,босяк,1,b,p,change,0,6,2,Soviet,devoicing
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,босяк,1,O,a,no_change,0,6,2,Soviet,no_change
@@ -2062,12 +2062,12 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,b,p,change,0,6,3,Pre-S
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,u,u,no_change,0,6,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,D,t,no_change,0,6,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,0,i,change,0,6,3,Pre-Soviet,epenthesis_v
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,k,kʲ,change,0,6,3,Pre-Soviet,other
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,k,kʲ,change,0,6,3,Pre-Soviet,palatalization
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,будка,1,A,a,no_change,0,6,3,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,b,p,change,0,5,3,Pre-Soviet,devoicing
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,u,u,no_change,0,5,3,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,D,t',change,0,5,3,Pre-Soviet,abruptive
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,k,k',change,0,5,3,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,k,k',change,0,5,3,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",будка,1,A,a,no_change,0,5,3,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,букварь,1,b,b,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,букварь,1,U,u,no_change,0,6,0,Pre-Soviet,no_change
@@ -2546,7 +2546,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринк�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,rʲ,r,no_change,1,9,3,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,i,n,change,1,9,3,Pre-Soviet,metathesis
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,n,i,change,1,9,3,Pre-Soviet,other
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,k,k',change,1,9,3,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,k,k',change,1,9,3,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечеринка,2,A,0,change,1,9,3,Pre-Soviet,apocope
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,vʲ,w,no_change,0,8,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,E,e,no_change,0,8,1,Soviet,no_change
@@ -2555,7 +2555,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,r,r,no_change,0,8,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,nʲ,n,no_change,0,8,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,I,i,no_change,0,8,1,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,k,k',change,0,8,1,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",вечерник,1,k,k',change,0,8,1,Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,взнос,1,v,w,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,взнос,1,z,z,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,взнос,1,n,n,no_change,0,5,0,Pre-Soviet,no_change
@@ -4176,7 +4176,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинни�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинник,1,i,i,no_change,1,8,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинник,1,nʲ,n,no_change,1,8,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинник,1,I,i,no_change,1,8,2,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинник,1,k,k',change,1,8,2,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",дружинник,1,k,k',change,1,8,2,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,дубликат,1,d,d,no_change,0,8,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,дубликат,1,U,u,no_change,0,8,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,дубликат,1,b,b,no_change,0,8,0,Pre-Soviet,no_change
@@ -4277,13 +4277,13 @@ Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,ʐ,ʒ,no_change,0,6,2,Pre-Sovi
 Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,u,u,no_change,0,6,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,lʲ,l,no_change,0,6,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,I,i,no_change,0,6,2,Pre-Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,k,k',change,0,6,2,Pre-Soviet,other
+Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,k,k',change,0,6,2,Pre-Soviet,abruptive
 Andi,Salimov 2010,Andi: Salimov 2010,жулик,1,0,i,change,0,6,2,Pre-Soviet,paragoge
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,ʐ,ʒ,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,u,u,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,lʲ,l,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,I,i,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",жулик,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,журнал,1,ʐ,ʒ,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,журнал,1,U,u,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,журнал,1,r,r,no_change,0,6,0,Pre-Soviet,no_change
@@ -4514,7 +4514,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,a,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,d,d,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,nʲ,n,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,I,i,no_change,0,6,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,k,k',change,0,6,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",задник,1,k,k',change,0,6,1,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,заем,1,z,z,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,заем,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,заем,1,j,j,no_change,0,5,1,Pre-Soviet,no_change
@@ -4600,7 +4600,7 @@ Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,A,a,no_change,0,7,1,Pre-
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,k,k,no_change,0,7,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,u,u,no_change,0,7,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,s,s,no_change,0,7,1,Pre-Soviet,no_change
-Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,k,k',change,0,7,1,Pre-Soviet,other
+Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,k,k',change,0,7,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,закуска,1,A,a,no_change,0,7,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,закуска,1,z,z,no_change,0,7,0,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,закуска,1,A,a,no_change,0,7,0,Pre-Soviet,no_change
@@ -6117,18 +6117,18 @@ Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",капитан,1,
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",капитан,1,t,t,no_change,0,7,0,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",капитан,1,a,a,no_change,0,7,0,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",капитан,1,n,n,no_change,0,7,0,Pre-Soviet,no_change
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,k,k',change,0,6,3,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,k,k',change,0,6,3,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,a,a,no_change,0,6,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,p,p',change,0,6,3,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,0,i,change,0,6,3,Pre-Soviet,epenthesis_v
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,lʲ,l,no_change,0,6,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",капли,1,I,i,no_change,0,6,3,Pre-Soviet,no_change
-Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,k,k',change,0,5,1,Pre-Soviet,other
+Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,p,p,no_change,0,5,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,lʲ,l,no_change,0,5,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,капли,1,I,i,no_change,0,5,1,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,капли,1,k,k',change,0,5,2,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,капли,1,k,k',change,0,5,2,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,капли,1,a,a,no_change,0,5,2,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,капли,1,p,b,change,0,5,2,Pre-Soviet,voicing
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,капли,1,lʲ,l,no_change,0,5,2,Pre-Soviet,no_change
@@ -6139,7 +6139,7 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,капля,1,p,p,no_change,0,6,3,Pr
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,капля,1,0,i,change,0,6,3,Pre-Soviet,epenthesis_v
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,капля,1,lʲ,l,no_change,0,6,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,капля,1,A,i,change,0,6,3,Pre-Soviet,other
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",капля,1,k,k',change,0,5,3,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",капля,1,k,k',change,0,5,3,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",капля,1,a,a,no_change,0,5,3,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",капля,1,p,p',change,0,5,3,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",капля,1,lʲ,l,no_change,0,5,3,Pre-Soviet,no_change
@@ -6525,7 +6525,7 @@ Avar,Gimbatov 2006,Avar: Gimbatov 2006,каша,1,a,a,no_change,0,5,2,Pre-Soviet
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,каша,1,0,r,change,0,5,2,Pre-Soviet,epenthesis_c
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,каша,1,ʃ,ʃː,no_change,0,5,2,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,каша,1,A,0,change,0,5,2,Pre-Soviet,apocope
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,каша,1,k,kʲ,change,0,5,3,Pre-Soviet,other
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,каша,1,k,kʲ,change,0,5,3,Pre-Soviet,palatalization
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,каша,1,a,a,no_change,0,5,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,каша,1,ʃ,ʃː,no_change,0,5,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,каша,1,A,i,change,0,5,3,Pre-Soviet,other
@@ -7010,7 +7010,7 @@ Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",к�
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,i,i,no_change,0,8,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,ʃ,ʃː,no_change,0,8,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,0,i,change,0,8,3,Pre-Soviet,epenthesis_v
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,k,k',change,0,8,3,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,k,k',change,0,8,3,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",книжка,1,A,a,no_change,0,8,3,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,книжка,1,k,k,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,книжка,1,nʲ,n,no_change,0,6,0,Pre-Soviet,no_change
@@ -7037,7 +7037,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,nʲ,n,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,i,i,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,ʃ,ʃ,no_change,0,7,2,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,k,k',change,0,7,2,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",книжка,1,A,a,no_change,0,7,2,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,кнопка,1,k,k,no_change,0,6,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,кнопка,1,n,n,no_change,0,6,0,Soviet,no_change
@@ -7052,7 +7052,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кнопка,1,o,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кнопка,1,p,p,no_change,0,7,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кнопка,1,k,k,no_change,0,7,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кнопка,1,A,a,no_change,0,7,1,Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,князь,1,k,k',change,0,6,3,Pre-Soviet,other
+Andi,Salimov 2010,Andi: Salimov 2010,князь,1,k,k',change,0,6,3,Pre-Soviet,abruptive
 Andi,Salimov 2010,Andi: Salimov 2010,князь,1,0,e,change,0,6,3,Pre-Soviet,epenthesis_v
 Andi,Salimov 2010,Andi: Salimov 2010,князь,1,nʲ,n,no_change,0,6,3,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,князь,1,a,a,no_change,0,6,3,Pre-Soviet,no_change
@@ -7241,7 +7241,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозни�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозник,1,zʲ,z,no_change,0,9,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозник,1,nʲ,n,no_change,0,9,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозник,1,I,i,no_change,0,9,1,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозник,1,k,k',change,0,9,1,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",колхозник,1,k,k',change,0,9,1,Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",колхозник,1,k,k,no_change,0,9,0,Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",колхозник,1,O,a,no_change,0,9,0,Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",колхозник,1,l,l,no_change,0,9,0,Soviet,no_change
@@ -8338,12 +8338,12 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кооперир�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кооперировать,1,v,w,no_change,0,12,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кооперировать,1,A,a,no_change,0,12,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кооперировать,1,tʲ,t,no_change,0,12,0,Soviet,no_change
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,O,e,change,0,7,6,Pre-Soviet,other
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,pʲ,b,change,0,7,6,Pre-Soviet,other
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,e,e,no_change,0,7,6,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,j,0,change,0,7,6,Pre-Soviet,mid_elision
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",копейка,1,A,i,change,0,7,6,Pre-Soviet,other
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,k,k,no_change,0,7,3,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,копейка,1,O,e,change,0,7,3,Pre-Soviet,other
@@ -8359,12 +8359,12 @@ Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,e,e,no_change,0,7,2,Pre-
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,j,0,change,0,7,2,Pre-Soviet,mid_elision
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,k,k,no_change,0,7,2,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,копейка,1,A,0,change,0,7,2,Pre-Soviet,apocope
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,O,e,change,0,7,6,Pre-Soviet,other
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,pʲ,b,change,0,7,6,Pre-Soviet,other
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,e,e,no_change,0,7,6,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,j,0,change,0,7,6,Pre-Soviet,mid_elision
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,копейка,1,A,0,change,0,7,6,Pre-Soviet,apocope
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",копейка,1,k,k,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",копейка,1,O,a,no_change,0,7,2,Pre-Soviet,no_change
@@ -8385,7 +8385,7 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,O,e,change,0,7,5,P
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,pʲ,p,no_change,0,7,5,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,e,e,no_change,0,7,5,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,j,0,change,0,7,5,Pre-Soviet,mid_elision
-Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,k,kʲ,change,0,7,5,Pre-Soviet,other
+Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,k,kʲ,change,0,7,5,Pre-Soviet,palatalization
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,копейка,1,A,i,change,0,7,5,Pre-Soviet,other
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",копейка,1,k,k,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",копейка,1,O,a,no_change,0,7,2,Pre-Soviet,no_change
@@ -8394,12 +8394,12 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",копейка,1,j,0,change,0,7,2,Pre-Soviet,mid_elision
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",копейка,1,k,k,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",копейка,1,A,0,change,0,7,2,Pre-Soviet,apocope
-Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,O,e,change,0,7,6,Pre-Soviet,other
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,pʲ,b,change,0,7,6,Pre-Soviet,other
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,e,e,no_change,0,7,6,Pre-Soviet,no_change
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,j,0,change,0,7,6,Pre-Soviet,mid_elision
-Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,k,k',change,0,7,6,Pre-Soviet,other
+Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,k,k',change,0,7,6,Pre-Soviet,abruptive
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,копейка,1,A,i,change,0,7,6,Pre-Soviet,other
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",копилка,1,k,k,no_change,0,7,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",копилка,1,O,a,no_change,0,7,0,Pre-Soviet,no_change
@@ -8691,7 +8691,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,1,j,0,change,0,8,5,Pre-Soviet,mid_elision
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,1,nʲ,n,no_change,0,8,5,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,1,I,i,no_change,0,8,5,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,1,k,k',change,0,8,5,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",кофейник,1,k,k',change,0,8,5,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,k,k,no_change,0,8,5,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,O,u,change,0,8,5,Pre-Soviet,other
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,fʲ,p,change,0,8,5,Pre-Soviet,other
@@ -8699,7 +8699,7 @@ Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,j,0,change,0,8,5,Pre-Soviet,mid_elision
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,nʲ,n,no_change,0,8,5,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,I,i,no_change,0,8,5,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,k,k',change,0,8,5,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",кофейник,1,k,k',change,0,8,5,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,кофта,1,k,k,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,кофта,1,o,o,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,кофта,1,f,f,no_change,0,5,0,Pre-Soviet,no_change
@@ -10071,12 +10071,12 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",маринова�
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,m,m,no_change,0,5,2,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,a,a,no_change,0,5,2,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,r,0,change,0,5,2,Pre-Soviet,mid_elision
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,k,k',change,0,5,2,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,k,k',change,0,5,2,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",марка,1,A,a,no_change,0,5,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,марка,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,марка,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,марка,1,r,r,no_change,0,5,1,Pre-Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,марка,1,k,k',change,0,5,1,Pre-Soviet,other
+Andi,Salimov 2010,Andi: Salimov 2010,марка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Andi,Salimov 2010,Andi: Salimov 2010,марка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,марка,1,m,m,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,марка,1,a,a,no_change,0,5,0,Pre-Soviet,no_change
@@ -10086,12 +10086,12 @@ Avar,Gimbatov 2006,Avar: Gimbatov 2006,марка,1,A,a,no_change,0,5,0,Pre-Sovi
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,r,r,no_change,0,5,1,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,k,k',change,0,5,1,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,марка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,r,r,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",марка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,марка,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,марка,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
@@ -10101,7 +10101,7 @@ Godoberi,Saidova 2006,Godoberi: Saidova 2006,марка,1,A,a,no_change,0,5,1,Pr
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,r,r,no_change,0,5,1,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,k,k',change,0,5,1,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",марка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,марксизм,1,m,m,no_change,0,8,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,марксизм,1,A,a,no_change,0,8,0,Soviet,no_change
@@ -10357,7 +10357,7 @@ Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",м�
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,U,u,no_change,0,8,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,ʃ,ʃː,no_change,0,8,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,0,i,change,0,8,3,Pre-Soviet,epenthesis_v
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,k,k',change,0,8,3,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,k,k',change,0,8,3,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",матушка,1,a,a,no_change,0,8,3,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,матушка,1,m,m,no_change,0,7,0,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,матушка,1,a,a,no_change,0,7,0,Pre-Soviet,no_change
@@ -10385,7 +10385,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,t,t,no_change,0,7,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,U,u,no_change,0,7,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,ʃ,ʃ,no_change,0,7,1,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,k,k',change,0,7,1,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,k,k',change,0,7,1,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",матушка,1,A,a,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",маузер,1,m,m,no_change,0,6,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",маузер,1,a,a,no_change,0,6,0,Soviet,no_change
@@ -10681,7 +10681,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,a,a,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,nʲ,n,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,I,i,no_change,0,7,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,k,k',change,0,7,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",механик,1,k,k',change,0,7,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,микроб,1,mʲ,m,no_change,0,6,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,микроб,1,I,i,no_change,0,6,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,микроб,1,k,k,no_change,0,6,0,Soviet,no_change
@@ -11217,7 +11217,7 @@ Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,m,m,no_change,0,6,2,Pre-Soviet
 Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,U,u,no_change,0,6,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,ʐ,ʒ,no_change,0,6,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,i,i,no_change,0,6,2,Pre-Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,k,k',change,0,6,2,Pre-Soviet,other
+Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,k,k',change,0,6,2,Pre-Soviet,abruptive
 Andi,Salimov 2010,Andi: Salimov 2010,мужик,1,0,i,change,0,6,2,Pre-Soviet,paragoge
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,мужик,1,m,m,no_change,0,5,2,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,мужик,1,U,u,no_change,0,5,2,Pre-Soviet,no_change
@@ -11228,12 +11228,12 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,m,m,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,U,u,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,ʐ,ʒ,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,i,i,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужик,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,m,m,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,U,u,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,ʐ,ʒ,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,i,i,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",мужиковатый,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,музей,1,m,m,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,музей,1,U,u,no_change,0,5,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,музей,1,zʲ,z,no_change,0,5,0,Pre-Soviet,no_change
@@ -11397,7 +11397,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальни�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальник,1,lʲ,l,no_change,0,8,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальник,1,nʲ,n,no_change,0,8,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальник,1,I,i,no_change,0,8,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальник,1,k,k',change,0,8,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",начальник,1,k,k',change,0,8,1,Pre-Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,начальник,1,n,n,no_change,0,9,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,начальник,1,A,a,no_change,0,9,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,начальник,1,tɕ,tʃ,no_change,0,9,3,Pre-Soviet,no_change
@@ -12122,7 +12122,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,p,p,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,U,u,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,s,s,no_change,0,7,2,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,k,k',change,0,7,2,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",отпуск,1,0,a,change,0,7,2,Pre-Soviet,paragoge
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",отрез,1,O,a,no_change,0,5,0,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",отрез,1,t,t,no_change,0,5,0,Pre-Soviet,no_change
@@ -13101,12 +13101,12 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,p,p,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,e,e,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,ʃ,ʃ,no_change,0,5,1,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,k,k',change,0,5,1,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пешка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,p,p,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,e,e,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,ʃ,ʃ,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пешка,1,A,a,no_change,0,5,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,пешка,1,p,p,no_change,0,5,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,пешка,1,e,e,no_change,0,5,1,Pre-Soviet,no_change
@@ -13569,7 +13569,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,1,r,r,no_change,0,8,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,1,nʲ,n,no_change,0,8,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,1,I,i,no_change,0,8,1,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,1,k,k',change,0,8,1,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пожарник,1,k,k',change,0,8,1,Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,покрышка,1,p,p,no_change,0,8,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,покрышка,1,O,o,no_change,0,8,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,покрышка,1,k,k,no_change,0,8,0,Pre-Soviet,no_change
@@ -13743,7 +13743,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,e,e,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,ɕː,ʃː,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,I,i,no_change,0,7,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,k,k',change,0,7,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",помещик,1,k,k',change,0,7,1,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",помидор,1,p,p,no_change,0,8,1,Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",помидор,1,O,a,no_change,0,8,1,Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",помидор,1,mʲ,m,no_change,0,8,1,Soviet,no_change
@@ -13989,7 +13989,7 @@ Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",п�
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,zʲ,z,no_change,0,9,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,nʲ,n,no_change,0,9,3,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,I,i,no_change,0,9,3,Pre-Soviet,no_change
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,k,k',change,0,9,3,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,k,k',change,0,9,3,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",праздник,1,0,e,change,0,9,3,Pre-Soviet,paragoge
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,праздник,1,p,p,no_change,0,7,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,праздник,1,r,r,no_change,0,7,0,Pre-Soviet,no_change
@@ -14005,7 +14005,7 @@ Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,a,a,no_cha
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,zʲ,z,no_change,0,8,2,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,nʲ,n,no_change,0,8,2,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,I,i,no_change,0,8,2,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,k,k',change,0,8,2,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,праздник,1,k,k',change,0,8,2,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,p,p,no_change,0,8,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,0,a,change,0,8,2,Pre-Soviet,epenthesis_v
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,r,r,no_change,0,8,2,Pre-Soviet,no_change
@@ -14013,7 +14013,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,zʲ,z,no_change,0,8,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,nʲ,n,no_change,0,8,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,I,i,no_change,0,8,2,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,k,k',change,0,8,2,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",праздник,1,k,k',change,0,8,2,Pre-Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,праздник,1,p,p,no_change,0,9,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,праздник,1,0,a,change,0,9,3,Pre-Soviet,epenthesis_v
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,праздник,1,r,r,no_change,0,9,3,Pre-Soviet,no_change
@@ -14030,7 +14030,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",праздник,1,zʲ,z,no_change,0,8,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",праздник,1,nʲ,n,no_change,0,8,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",праздник,1,I,i,no_change,0,8,2,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",праздник,1,k,k',change,0,8,2,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",праздник,1,k,k',change,0,8,2,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,председатель,1,p,p,no_change,0,11,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,председатель,1,rʲ,r,no_change,0,11,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,председатель,1,E,e,no_change,0,11,0,Pre-Soviet,no_change
@@ -14161,7 +14161,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывни�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывник,1,v,w,no_change,0,9,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывник,1,nʲ,n,no_change,0,9,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывник,1,i,i,no_change,0,9,1,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывник,1,k,k',change,0,9,1,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",призывник,1,k,k',change,0,9,1,Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,приказ,1,p,p,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,приказ,1,rʲ,r,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,приказ,1,I,i,no_change,0,6,0,Pre-Soviet,no_change
@@ -14622,21 +14622,21 @@ Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,rʲ,r,no_chang
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,a,aː,no_change,0,7,2,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,nʲ,n,no_change,0,7,2,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,k,k',change,0,7,2,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,пряник,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,p,p,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,0,i,change,0,7,2,Pre-Soviet,epenthesis_v
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,rʲ,r,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,nʲ,n,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,k,k',change,0,7,2,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",пряник,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,p,p,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,0,e,change,0,7,3,Pre-Soviet,epenthesis_v
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,rʲ,r,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,a,e,change,0,7,3,Pre-Soviet,other
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,nʲ,n,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,I,i,no_change,0,7,3,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,k,k',change,0,7,3,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",пряник,1,k,k',change,0,7,3,Pre-Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,пряник,1,p,p,no_change,0,8,3,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,пряник,1,0,i,change,0,8,3,Pre-Soviet,epenthesis_v
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,пряник,1,rʲ,r,no_change,0,8,3,Pre-Soviet,no_change
@@ -14879,7 +14879,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиопри�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоприемник,1,m,m,no_change,1,14,2,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоприемник,1,nʲ,n,no_change,1,14,2,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоприемник,1,I,i,no_change,1,14,2,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоприемник,1,k,k',change,1,14,2,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоприемник,1,k,k',change,1,14,2,Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,радиостанция,1,r,r,no_change,0,13,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,радиостанция,1,ˌa,a,no_change,0,13,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,радиостанция,1,dʲ,d,no_change,0,13,0,Soviet,no_change
@@ -14939,7 +14939,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотех�
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотехник,1,x,χ,no_change,0,11,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотехник,1,nʲ,n,no_change,0,11,1,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотехник,1,I,i,no_change,0,11,1,Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотехник,1,k,k',change,0,11,1,Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиотехник,1,k,k',change,0,11,1,Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоузел,1,r,r,no_change,0,9,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоузел,1,ˌa,a,no_change,0,9,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",радиоузел,1,dʲ,d,no_change,0,9,0,Soviet,no_change
@@ -18268,7 +18268,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,e,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,x,χ,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,nʲ,n,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,I,i,no_change,0,6,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,k,k',change,0,6,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техник,1,k,k',change,0,6,1,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",техник,1,tʲ,t,no_change,0,6,0,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",техник,1,e,e,no_change,0,6,0,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",техник,1,x,χ,no_change,0,6,0,Pre-Soviet,no_change
@@ -18294,7 +18294,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,x,χ,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,nʲ,n,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,I,i,no_change,0,7,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,k,k',change,0,7,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,k,k',change,0,7,1,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",техника,1,A,a,no_change,0,7,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,техникум,1,tʲ,t,no_change,0,8,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,техникум,1,e,e,no_change,0,8,0,Soviet,no_change
@@ -18749,7 +18749,7 @@ Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,U,
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,r,r,no_change,0,6,1,Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,nʲ,n,no_change,0,6,1,Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,i,i,no_change,0,6,1,Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,k,k',change,0,6,1,Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",турник,1,k,k',change,0,6,1,Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,турник,1,t,t,no_change,0,7,2,Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,турник,1,U,u,no_change,0,7,2,Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,турник,1,r,r,no_change,0,7,2,Soviet,no_change
@@ -19042,7 +19042,7 @@ Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,a,oː,
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,lʲ,0,change,0,9,5,Pre-Soviet,mid_elision
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,nʲ,n,no_change,0,9,5,Pre-Soviet,no_change
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,I,i,no_change,0,9,5,Pre-Soviet,no_change
-Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,k,k',change,0,9,5,Pre-Soviet,other
+Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,умывальник,1,k,k',change,0,9,5,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,универмаг,1,U,u,no_change,0,9,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,универмаг,1,nʲ,n,no_change,0,9,0,Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,универмаг,1,I,i,no_change,0,9,0,Soviet,no_change
@@ -19357,7 +19357,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,b,b,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,rʲ,r,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,k,k',change,0,7,2,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",фабрика,1,A,a,no_change,0,7,2,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,фабрика,1,f,p,change,0,7,2,Pre-Soviet,other
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,фабрика,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
@@ -19812,7 +19812,7 @@ Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,rʲ,r,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,k,k',change,0,7,2,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",фонарик,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,фонарик,1,f,p,change,0,7,1,Pre-Soviet,other
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,фонарик,1,O,a,no_change,0,7,1,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,фонарик,1,n,n,no_change,0,7,1,Pre-Soviet,no_change
@@ -20260,7 +20260,7 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,1,ʐ,ʒ,no_change,0,8,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,1,nʲ,n,no_change,0,8,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,1,I,i,no_change,0,8,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,1,k,k',change,0,8,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",художник,1,k,k',change,0,8,1,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",целина,1,ts,tsː,no_change,0,6,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",целина,1,E,i,no_change,0,6,0,Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",целина,1,lʲ,l,no_change,0,6,0,Soviet,no_change
@@ -20364,14 +20364,14 @@ Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",ч�
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,j,0,change,0,7,4,Pre-Soviet,mid_elision
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,nʲ,n,no_change,0,7,4,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,I,i,no_change,0,7,4,Pre-Soviet,no_change
-Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,k,k',change,0,7,4,Pre-Soviet,other
+Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,k,k',change,0,7,4,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",чайник,1,0,e,change,0,7,4,Pre-Soviet,paragoge
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,tɕ,tʃ,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,j,j,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,nʲ,n,no_change,0,7,2,Pre-Soviet,no_change
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,I,i,no_change,0,7,2,Pre-Soviet,no_change
-Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,k,k',change,0,7,2,Pre-Soviet,other
+Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Andi,Salimov 2010,Andi: Salimov 2010,чайник,1,0,i,change,0,7,2,Pre-Soviet,paragoge
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,чайник,1,tɕ,tʃ,no_change,0,6,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,чайник,1,a,a,no_change,0,6,0,Pre-Soviet,no_change
@@ -20384,14 +20384,14 @@ Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,a,
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,j,j,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,nʲ,n,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,I,i,no_change,0,6,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,k,k',change,0,6,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",чайник,2,k,k',change,0,6,1,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,tɕ,tʃ,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,a,a,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,j,h,change,0,7,3,Pre-Soviet,other
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,0,i,change,0,7,3,Pre-Soviet,epenthesis_v
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,nʲ,n,no_change,0,7,3,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,I,i,no_change,0,7,3,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,k,k',change,0,7,3,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",чайник,1,k,k',change,0,7,3,Pre-Soviet,abruptive
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,чайник,1,tɕ,tʃ,no_change,0,3,0,Pre-Soviet,no_change
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,чайник,1,a,a,no_change,0,3,0,Pre-Soviet,no_change
 Chamalal,Magomedova 1999,Chamalal: Magomedova 1999,чайник,1,j,j,no_change,0,3,0,Pre-Soviet,no_change
@@ -20503,7 +20503,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,x,χ,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,o,o,no_change,0,7,2,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,t,t,no_change,0,7,2,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,k,k',change,0,7,2,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",чахотка,1,A,a,no_change,0,7,2,Pre-Soviet,no_change
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,чахотка,2,tɕ,tʃ,no_change,0,8,2,Pre-Soviet,no_change
 Tindi,Magomedova 2003,Tindi: Magomedova 2003,чахотка,2,A,a,no_change,0,8,2,Pre-Soviet,no_change
@@ -20942,13 +20942,13 @@ Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,A,a,no_change,0,6,1,Pre-So
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,ʃ,ʃ,no_change,0,6,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,l,l,no_change,0,6,1,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,i,i,no_change,0,6,1,Pre-Soviet,no_change
-Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,k,k',change,0,6,1,Pre-Soviet,other
+Avar,Gimbatov 2006,Avar: Gimbatov 2006,шашлык,1,k,k',change,0,6,1,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,ʃ,ʃ,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,A,a,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,ʃ,ʃ,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,l,l,no_change,0,6,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,i,i,no_change,0,6,1,Pre-Soviet,no_change
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,k,k',change,0,6,1,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шашлык,1,k,k',change,0,6,1,Pre-Soviet,abruptive
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,швед,1,ʃ,ʃ,no_change,0,4,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,швед,1,vʲ,w,no_change,0,4,0,Pre-Soviet,no_change
 Avar,Gimbatov 2006,Avar: Gimbatov 2006,швед,1,e,e,no_change,0,4,0,Pre-Soviet,no_change
@@ -21207,7 +21207,7 @@ Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,шоколад,1,a,a,no_chang
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,шоколад,1,D,d,no_change,0,7,1,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,ʃ,ʃː,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,O,i,change,0,7,2,Pre-Soviet,other
-Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,k,k',change,0,7,2,Pre-Soviet,other
+Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,k,k',change,0,7,2,Pre-Soviet,abruptive
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,O,a,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,l,l,no_change,0,7,2,Pre-Soviet,no_change
 Botlikh,"Alekseev, Azaev 2019","Botlikh: Alekseev, Azaev 2019",шоколад,1,a,a,no_change,0,7,2,Pre-Soviet,no_change
@@ -21705,12 +21705,12 @@ Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,j,j,no_change,0,5,
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,ɕː,ʃ,no_change,0,5,1,Pre-Soviet,no_change
 Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,I,i,no_change,0,5,1,Pre-Soviet,no_change
-Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,k,k',change,0,5,1,Pre-Soviet,other
+Bagvalal,Magomedova 2004,Bagvalal: Magomedova 2004,ящик,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,j,j,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,ɕː,ʃ,no_change,0,5,1,Pre-Soviet,no_change
 Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,I,i,no_change,0,5,1,Pre-Soviet,no_change
-Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,k,k',change,0,5,1,Pre-Soviet,other
+Botlikh,"Saidova, Abusov 2012","Botlikh: Saidova, Abusov 2012",ящик,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,ящик,1,j,j,no_change,0,6,2,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,ящик,1,a,a,no_change,0,6,2,Pre-Soviet,no_change
 Godoberi,Saidova 2006,Godoberi: Saidova 2006,ящик,1,ɕː,ʃ,no_change,0,6,2,Pre-Soviet,no_change
@@ -21721,7 +21721,7 @@ Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",ящик,1,a,a,no_change,0,5,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",ящик,1,ɕː,ʃː,no_change,0,5,1,Pre-Soviet,no_change
 Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",ящик,1,I,i,no_change,0,5,1,Pre-Soviet,no_change
-Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",ящик,1,k,k',change,0,5,1,Pre-Soviet,other
+Karata-Tukita,"Magomedova, Khalidova 2001","Karata-Tukita: Magomedova, Khalidova 2001",ящик,1,k,k',change,0,5,1,Pre-Soviet,abruptive
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",ящур,1,j,j,no_change,0,6,1,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",ящур,1,a,a,no_change,0,6,1,Pre-Soviet,no_change
 Akhvakh,"Magomedova, Abdulayeva 2007","Akhvakh: Magomedova, Abdulayeva 2007",ящур,1,ɕː,ʃː,no_change,0,6,1,Pre-Soviet,no_change
