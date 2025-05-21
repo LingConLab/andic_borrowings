@@ -56,4 +56,9 @@ districts |>
                                 "#EB88CD",
                                 "#F3DD0D"))+
   ylim(42.2, 42.9)+
-  xlim(45.7, 46.7)
+  xlim(45.7, 46.7) ->
+  map
+
+map
+
+ggsave("map.png", plot = map, width = 9, height = 7, bg = "white")
